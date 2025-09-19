@@ -1,15 +1,51 @@
-import { Geist, Geist_Mono } from "next/font/google";
 import type { Metadata } from "next";
-
+import localFont from "next/font/local";
 import "./globals.css";
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+
+const lufga = localFont({
+  src: [
+    {
+      path: "../../public/assets/font/lufga-light.woff2",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../../public/assets/font/lufga-bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../../public/assets/font/lufga-extraBold.woff2",
+      weight: "800",
+      style: "normal",
+    },
+  ],
+  variable: "--font-lufga",
+  display: "swap",
+  preload: false,
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const lufgaPreload = localFont({
+  src: [
+    {
+      path: "../../public/assets/font/lufga-regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/assets/font/lufga-medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/assets/font/lufga-semiBold.woff2",
+      weight: "600",
+      style: "normal",
+    },
+  ],
+  variable: "--font-lufga-preload",
+  display: "swap",
+  preload: true,
 });
 
 export const metadata: Metadata = {
@@ -62,6 +98,7 @@ export const metadata: Metadata = {
     ],
   },
 };
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -70,7 +107,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${lufgaPreload.variable} ${lufga.variable} antialiased`}
       >
         {children}
       </body>
