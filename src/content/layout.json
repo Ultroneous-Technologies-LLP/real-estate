@@ -1,0 +1,35 @@
+{
+  "header": {
+    "logo": {
+      "title": "Feel Home",
+      "src": "/assets/icons/logo-header.svg",
+      "alt": "Feel Home Logo",
+      "link": "/#home"
+    },
+    "navLinks": [
+      {
+        "id": 1,
+        "links": "/#home",
+        "title": "HOME"
+      },
+      {
+        "id": 2,
+        "links": "/#best-deals",
+        "title": "BEST DEALS"
+      },
+      {
+        "id": 3,
+        "links": "/#experiences",
+        "title": "EXPERIENCES"
+      },
+      {
+        "id": 4,
+        "links": "/#about-us",
+        "title": "ABOUT US"
+      }
+    ],
+    "button": {
+      "title": "Log in"
+    }
+  }
+}
