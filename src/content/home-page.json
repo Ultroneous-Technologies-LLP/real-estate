@@ -1,0 +1,24 @@
+{
+  "heroSection": {
+    "youFocus": "You focus on travel,",
+    "manageYourStay": "We will Manage your Stay",
+    "description": [
+      {
+        "id": 1,
+        "title": "Missing the feel of a home when trravelling?"
+      },
+      {
+        "id": 2,
+        "title": "Well, then you have landed on the right page."
+      },
+      {
+        "id": 3,
+        "title": "Grab deals of Flats, Bungalows & Villas."
+      }
+    ],
+    "image": {
+      "src": "/assets/images/residential-building.avif",
+      "alt": "Residential Building"
+    }
+  }
+}

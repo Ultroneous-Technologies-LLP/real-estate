@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 
-import { Footer, Header } from "@/component/layout";
 import data from "@/content/layout.json";
-import { layoutData } from "@/types/layout";
+import { Footer, Header } from "@/components/layout";
+import { layoutDataType } from "@/components/layout/types";
 import "./globals.css";
 
 const lufga = localFont({
@@ -108,7 +108,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const layoutData = data as layoutData;
+  const layoutData: layoutDataType = data;
   return (
     <html lang="en">
       <body
@@ -116,7 +116,7 @@ export default function RootLayout({
       >
         <Header data={layoutData.header} />
         {children}
-        <Footer data={layoutData.footer}/>
+        <Footer data={layoutData.footer} />
       </body>
     </html>
   );
