@@ -31,5 +31,37 @@
     "button": {
       "title": "Log in"
     }
+  },
+  "footer": {
+    "logo": {
+      "title": "Feel Home",
+      "src": "/assets/icons/logo-footer.svg",
+      "alt": "Feel Home Logo",
+      "link": "/#home"
+    },
+    "anyDoubts": "Have any doubts regarding the stay or pricing?",
+    "contactUs": "Feel free to contact us",
+    "navLinks": [
+      {
+        "id": 1,
+        "links": "/#home",
+        "title": "HOME"
+      },
+      {
+        "id": 2,
+        "links": "/#best-deals",
+        "title": "BEST DEALS"
+      },
+      {
+        "id": 3,
+        "links": "/#experiences",
+        "title": "EXPERIENCES"
+      },
+      {
+        "id": 4,
+        "links": "/#about-us",
+        "title": "ABOUT US"
+      }
+    ]
   }
 }
