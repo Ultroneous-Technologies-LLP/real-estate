@@ -2,16 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
 
-import { Container } from "@/component/common";
-import { header } from "@/types/layout";
-
-interface HeaderProps {
-  data: header;
-}
+import { Container } from "@/components/common";
+import { HeaderProps } from "./types";
 
 const Header: FC<HeaderProps> = ({ data }) => {
   return (
-    <nav className="w-full sticky top-11 mx-auto z-50 max-w-360 bg-[#ABB3C1]/15 px-4 xl:px-27.5">
+    <nav className="w-full z-50 fixed top-4 xl:top-11 left-1/2 -translate-x-1/2 mx-auto max-w-360 bg-cadet-blue/15 px-4 xl:px-27.5 py-2">
       <Container as="header">
         <div className="flex justify-between items-center">
           <div className="flex gap-4 items-center">

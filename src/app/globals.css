@@ -4,6 +4,7 @@
   --font-lufga-preload: var(--font-lufga-preload), sans-serif;
   --font-lufga: var(--font-lufga), sans-serif;
   --color-police-blue: #3f5260;
+  --color-cadet-blue: #abb3c1;
 }
 
 body {
