@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Header } from "@/component/layout";
+import data from "@/content/layout.json";
+import { layoutData } from "@/types/layout";
 
 const lufga = localFont({
   src: [
@@ -104,11 +107,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const layoutData = data as layoutData;
   return (
     <html lang="en">
       <body
         className={`${lufgaPreload.variable} ${lufga.variable} antialiased`}
       >
+        <Header data={layoutData.header} />
         {children}
       </body>
     </html>
