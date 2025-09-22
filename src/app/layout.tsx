@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 
 import data from "@/content/layout.json";
 import { Footer, Header } from "@/components/layout";
-import { layoutDataType } from "@/components/layout/types";
+import { LayoutDataType } from "@/components/layout/types";
 import "./globals.css";
 
 const lufga = localFont({
@@ -108,9 +108,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const layoutData: layoutDataType = data;
+  const layoutData: LayoutDataType = data;
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
         className={`${lufgaPreload.variable} ${lufga.variable} antialiased`}
       >

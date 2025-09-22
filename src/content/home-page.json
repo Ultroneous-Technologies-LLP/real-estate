@@ -20,5 +20,42 @@
       "src": "/assets/images/residential-building.avif",
       "alt": "Residential Building"
     }
+  },
+  "goingOnTripSection": {
+    "trip": "Going on Trip?",
+    "yourStay": "Let's plan for your stay now.",
+    "guides": [
+      {
+        "id": 1,
+        "src": "/assets/icons/search-property.svg",
+        "alt": "Search Property",
+        "title": "Search Property",
+        "description": "Look around for the property you love to stay",
+        "width": 77,
+        "height": 77
+      },
+      {
+        "id": 2,
+        "src": "/assets/icons/book-property.svg",
+        "alt": "Book Property",
+        "title": "Book Property",
+        "description": "Finalize the deal and get the best offers",
+        "width": 76,
+        "height": 86
+      },
+      {
+        "id": 3,
+        "src": "/assets/icons/make-your-dream-come-true.svg",
+        "alt": "Make your dream come true",
+        "title": "Make your dream come true",
+        "description": "Live the life you ever wanted with our lavish property",
+        "width": 90,
+        "height": 90
+      }
+    ],
+    "borderImg": {
+      "src": "/assets/icons/border.svg",
+      "alt": "border"
+    }
   }
 }
