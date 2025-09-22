@@ -1,17 +1,17 @@
-export interface navLinks {
+export interface NavLinks {
   id: number;
   links: string;
   title: string;
 }
 
-export interface logo {
+export interface Logo {
   title: string;
   src: string;
   alt: string;
   link: string;
 }
 
-export interface image {
+export interface Image {
   src: string;
   alt: string;
 }

@@ -4,10 +4,10 @@ import Image from "next/image";
 import { ChangeEvent, useRef, useState } from "react";
 
 import { Search } from "@/components/icons";
-import { locationOptions } from "./constants";
-import { HeroEnum } from "./hero";
-
 import useClickOutside from "@/hooks/useClickOutside";
+
+import { HeroEnum } from "./hero";
+import { locationOptions } from "./constants";
 
 const LocationAndPropertySearch = () => {
   const [isLocationOpen, setIsLocationOpen] = useState(false);
@@ -24,6 +24,11 @@ const LocationAndPropertySearch = () => {
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setLocation(e.target.value);
     if (!isLocationOpen) setIsLocationOpen(true);
+  };
+
+  const handleOnClick = (loc: string) => {
+    setLocation(loc);
+    setIsLocationOpen(false);
   };
 
   return (
@@ -60,7 +65,7 @@ const LocationAndPropertySearch = () => {
           <input
             id="location"
             className="text-sm/3.5 max-w-39 w-full placeholder:text-[#A7B0B7] focus-within:outline-0"
-            placeholder="Where are you Going ?"
+            placeholder={HeroEnum.WERE_ARE_YOU_GOING}
             value={location}
             onChange={handleInputChange}
             autoComplete="off"
@@ -72,10 +77,7 @@ const LocationAndPropertySearch = () => {
                   <li
                     key={loc}
                     className="px-3 py-2 cursor-pointer hover:bg-gray-100 hover:rounded-lg"
-                    onClick={() => {
-                      setLocation(loc);
-                      setIsLocationOpen(false);
-                    }}
+                    onClick={() => handleOnClick(loc)}
                   >
                     {loc}
                   </li>
@@ -108,7 +110,7 @@ const LocationAndPropertySearch = () => {
       <button
         type="button"
         aria-label=""
-        className="rounded-xl bg-[#3F5260] py-3 px-4 font-lufga-preload font-semibold text-base/normal tracking-widest text-[#F7F8F9] w-fit mt-4 md:hidden"
+        className="rounded-xl bg-police-blue py-3 px-4 font-lufga-preload font-semibold text-base/normal tracking-widest text-[#F7F8F9] w-fit mt-4 md:hidden"
       >
         {HeroEnum.BUTTONTEXT}
       </button>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FC } from "react";
 
 import { Container } from "@/components/common";
+
 import { HeaderProps } from "./types";
 
 const Header: FC<HeaderProps> = ({ data }) => {

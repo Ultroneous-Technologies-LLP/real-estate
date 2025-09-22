@@ -1,11 +1,13 @@
-import { logo, navLinks } from "@/types/common";
+import { Logo, NavLinks } from "@/types/common";
+
+interface Button {
+  title: string;
+}
 
 interface Header {
-  logo: logo;
-  navLinks: navLinks[];
-  button: {
-    title: string;
-  };
+  logo: Logo;
+  navLinks: NavLinks[];
+  button: Button;
 }
 
 export interface HeaderProps {
@@ -13,17 +15,17 @@ export interface HeaderProps {
 }
 
 type Footer = {
-  logo: logo;
+  logo: Logo;
   anyDoubts: string;
   contactUs: string;
-  navLinks: navLinks[];
+  navLinks: NavLinks[];
 };
 
 export interface FooterProps {
   data: Footer;
 }
 
-export interface layoutDataType {
+export interface LayoutDataType {
   header: Header;
   footer: Footer;
 }
