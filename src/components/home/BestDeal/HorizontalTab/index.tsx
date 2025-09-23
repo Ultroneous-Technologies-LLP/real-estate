@@ -1,26 +1,25 @@
 "use client";
 
 import { FC, useEffect, useRef, useState } from "react";
-
 import clsx from "clsx";
 
+import { BREAK_POINT_LG } from "@/constants/constants";
+import useMounted from "@/components/hooks/useMounted";
 import useScreenSize from "@/components/hooks/useScreenSize";
 
+import { TABS } from "../constants";
 import DesktopTab from "./DesktopTab";
 import MobileSlider from "./MobileSlider";
-import { BREAK_POINT_LG, TABS } from "../constants";
 import { HorizontalTabProps, TabKey } from "../types";
 
 const HorizontalTab: FC<HorizontalTabProps> = ({ tabData, currentCity }) => {
   const [activeTab, setActiveTab] = useState<TabKey>("Flat");
   const [underlineStyle, setUnderlineStyle] = useState({ left: 0, width: 0 });
-  const [hasMounted, setHasMounted] = useState(false);
   const tabsRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => setHasMounted(true), []);
-
+  const mounted = useMounted(); // ✅ replace hasMounted state
   const { width } = useScreenSize();
-  const isMobile = hasMounted && width < BREAK_POINT_LG;
+  const isMobile = mounted && width < BREAK_POINT_LG;
 
   useEffect(() => {
     if (!tabsRef.current) return;

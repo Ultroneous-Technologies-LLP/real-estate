@@ -15,26 +15,25 @@ interface Guides {
   height: number;
 }
 
-interface HeroSection {
+interface DiscoverExperiencesSlider {
+  id: number;
+  src: string;
+  alt: string;
+  title: string;
+}
+
+export interface HeroProps {
   image: Image;
   youFocus: string;
   manageYourStay: string;
   description: Description[];
 }
 
-export interface HeroProps {
-  data: HeroSection;
-}
-
-interface GoingOnTripSection {
+export interface GoingOnTripProps {
   trip: string;
   yourStay: string;
   guides: Guides[];
   borderImg: Image;
-}
-
-export interface GoingOnTripProps {
-  data: GoingOnTripSection;
 }
 
 interface BestDealItem {
@@ -49,18 +48,21 @@ export interface TabData {
   Villa: BestDealItem[];
 }
 
-interface BestDealSection {
+export interface BestDealProps {
   title: string;
   description: string;
   tabData: Record<string, TabData>;
 }
 
-export interface BestDealProps {
-  data: BestDealSection;
+export interface DiscoverExperiencesProps {
+  title: string;
+  description: string;
+  discoverExperiencesSlider: DiscoverExperiencesSlider[];
 }
 
 export interface HomeDataType {
-  heroSection: HeroSection;
-  goingOnTripSection: GoingOnTripSection;
-  bestDealSection: BestDealSection;
+  heroSection: HeroProps;
+  goingOnTripSection: GoingOnTripProps;
+  bestDealSection: BestDealProps;
+  discoverExperiencesSection: DiscoverExperiencesProps;
 }

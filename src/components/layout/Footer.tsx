@@ -7,7 +7,7 @@ import { Facebook, Instagram, Twitter } from "@/components/icons";
 
 import { FooterProps } from "./types";
 
-const Footer: FC<FooterProps> = ({ data }) => (
+const Footer: FC<FooterProps> = ({ anyDoubts, contactUs, logo, navLinks }) => (
   <Container
     as="footer"
     backgroundClassName="bg-police-blue"
@@ -16,29 +16,29 @@ const Footer: FC<FooterProps> = ({ data }) => (
   >
     <div className="max-w-171 w-full mx-auto">
       <div>
-        <Link href={data.logo.link} aria-label={`${data.logo.title} homepage`}>
+        <Link href={logo.link} aria-label={`${logo.title} homepage`}>
           <Image
-            src={data.logo.src}
+            src={logo.src}
             width={54}
             height={54}
-            alt={data.logo.alt}
-            title={data.logo.alt}
+            alt={logo.alt}
+            title={logo.alt}
             className="mx-auto"
           />
         </Link>
         <p className="text-white te-xl xl:text-2xl/6 font-semibold font-lufga-preload text-center pt-3 xl:pt-3.5">
-          <span>{data.logo.title}</span>
+          <span>{logo.title}</span>
         </p>
       </div>
       <p className="pt-8 xl:pt-10 text-white/50 text-sm/3.5 xl:text-lg/4.5 font-lufga-preload text-center pb-4">
-        <span>{data.anyDoubts}</span>
+        <span>{anyDoubts}</span>
       </p>
       <p className="pb-8 xl:pb-13.5 text-white/50 text-sm/3.5 xl:text-lg/4.5 font-lufga-preload text-center">
-        <span>{data.contactUs}</span>
+        <span>{contactUs}</span>
       </p>
       <nav aria-label="Footer navigation">
         <ul className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 xl:gap-16">
-          {data.navLinks.map((value) => (
+          {navLinks.map((value) => (
             <li key={value.id}>
               <Link
                 href={value.links}
