@@ -1,16 +1,26 @@
 import data from "@/content/home-page.json";
 import { HomeDataType } from "@/components/home/types";
-import { BestDeal, GoingOnTrip, Hero } from "@/components/home";
+import {
+  BestDeal,
+  DiscoverExperiences,
+  GoingOnTrip,
+  Hero,
+} from "@/components/home";
 
 const Home = () => {
-  const { bestDealSection, goingOnTripSection, heroSection }: HomeDataType =
-    data;
+  const {
+    bestDealSection,
+    goingOnTripSection,
+    heroSection,
+    discoverExperiencesSection,
+  }: HomeDataType = data;
 
   return (
     <>
-      <Hero data={heroSection} />
-      <GoingOnTrip data={goingOnTripSection} />
-      <BestDeal data={bestDealSection} />
+      <Hero {...heroSection} />
+      <GoingOnTrip {...goingOnTripSection} />
+      <BestDeal {...bestDealSection} />
+      <DiscoverExperiences {...discoverExperiencesSection} />
     </>
   );
 };

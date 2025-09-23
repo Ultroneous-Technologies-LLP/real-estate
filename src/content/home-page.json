@@ -382,5 +382,29 @@
         ]
       }
     }
+  },
+  "discoverExperiencesSection": {
+    "title": "Discover Experiences",
+    "description": "Get the best offers and additional facilities wherever you searched.",
+    "discoverExperiencesSlider": [
+      {
+        "id": 1,
+        "src": "/assets/images/things-to-do-on-your-trip.avif",
+        "alt": "Things to do on your Trip",
+        "title": "Things to do on your Trip"
+      },
+      {
+        "id": 2,
+        "src": "/assets/images/things-to-do-on-from-home.avif",
+        "alt": "Things to do on From Home",
+        "title": "Things to do on From Home"
+      },
+      {
+        "id": 3,
+        "src": "/assets/images/cook-the-home-food.avif",
+        "alt": "Cook the Home Food",
+        "title": "Cook the Home Food"
+      }
+    ]
   }
 }

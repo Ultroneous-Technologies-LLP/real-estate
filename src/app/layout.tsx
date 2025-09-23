@@ -108,15 +108,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const layoutData: LayoutDataType = data;
+  const { footer, header }: LayoutDataType = data;
+
   return (
     <html lang="en" className="scroll-smooth">
       <body
         className={`${lufgaPreload.variable} ${lufga.variable} antialiased`}
       >
-        <Header data={layoutData.header} />
+        <Header {...header} />
         {children}
-        <Footer data={layoutData.footer} />
+        <Footer {...footer} />
       </body>
     </html>
   );
