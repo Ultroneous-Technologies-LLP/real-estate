@@ -66,12 +66,15 @@ const LocationAndPropertySearch = () => {
             id="location"
             className="text-sm/3.5 max-w-39 w-full placeholder:text-[#A7B0B7] focus-within:outline-0"
             placeholder={HeroEnum.WERE_ARE_YOU_GOING}
-            value={location}
+            value={location || ""}
             onChange={handleInputChange}
             autoComplete="off"
           />
           {isLocationOpen && (
-            <ul className="absolute z-10 mt-3 bg-white shadow-md rounded-lg w-full border border-gray-200">
+            <ul
+              suppressHydrationWarning
+              className="absolute z-10 mt-3 bg-white shadow-md rounded-lg w-full border border-gray-200"
+            >
               {filteredOptions.length > 0 ? (
                 filteredOptions.map((loc) => (
                   <li
@@ -101,6 +104,8 @@ const LocationAndPropertySearch = () => {
             id="propertyType"
             placeholder="Search For Flat, Bungalow or Villa"
             className="text-sm/3.5 w-full placeholder:text-[#A7B0B7] focus-within:outline-0"
+            defaultValue=""
+            autoComplete="off"
           />
         </div>
       </div>
@@ -109,7 +114,7 @@ const LocationAndPropertySearch = () => {
       </div>
       <button
         type="button"
-        aria-label=""
+        aria-label="search-button"
         className="rounded-xl bg-police-blue py-3 px-4 font-lufga-preload font-semibold text-base/normal tracking-widest text-[#F7F8F9] w-fit mt-4 md:hidden"
       >
         {HeroEnum.BUTTONTEXT}
