@@ -28,7 +28,30 @@ export type goingOnTripSection = {
   borderImg: img;
 };
 
+export type BestDealItem = {
+  image: string;
+  title: string;
+  link: string;
+};
+
+export type TabData = {
+  Flat: BestDealItem[];
+  Bungalow: BestDealItem[];
+  Villa: BestDealItem[];
+};
+
+export type BestDealSection = {
+  title: string;
+  description: string;
+  tabData: Record<string, TabData>; // city name as key
+};
+
+export interface BestDealProps {
+  data: BestDealSection;
+}
+
 export type homeData = {
   heroSection: heroSection;
   goingOnTripSection: goingOnTripSection;
+  BestDealSection: BestDealSection;
 };
