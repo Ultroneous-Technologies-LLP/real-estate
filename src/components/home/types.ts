@@ -37,7 +37,30 @@ export interface GoingOnTripProps {
   data: GoingOnTripSection;
 }
 
+interface BestDealItem {
+  image: string;
+  title: string;
+  link: string;
+}
+
+export interface TabData {
+  Flat: BestDealItem[];
+  Bungalow: BestDealItem[];
+  Villa: BestDealItem[];
+}
+
+interface BestDealSection {
+  title: string;
+  description: string;
+  tabData: Record<string, TabData>;
+}
+
+export interface BestDealProps {
+  data: BestDealSection;
+}
+
 export interface HomeDataType {
   heroSection: HeroSection;
   goingOnTripSection: GoingOnTripSection;
+  bestDealSection: BestDealSection;
 }

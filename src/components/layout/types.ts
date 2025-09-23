@@ -14,12 +14,12 @@ export interface HeaderProps {
   data: Header;
 }
 
-type Footer = {
+interface Footer {
   logo: Logo;
   anyDoubts: string;
   contactUs: string;
   navLinks: NavLinks[];
-};
+}
 
 export interface FooterProps {
   data: Footer;
