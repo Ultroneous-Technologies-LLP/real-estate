@@ -3,9 +3,9 @@
 import { FC, useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 
+import useMounted from "@/hooks/useMounted";
+import useScreenSize from "@/hooks/useScreenSize";
 import { BREAK_POINT_LG } from "@/constants/constants";
-import useMounted from "@/components/hooks/useMounted";
-import useScreenSize from "@/components/hooks/useScreenSize";
 
 import { TABS } from "../constants";
 import DesktopTab from "./DesktopTab";
@@ -17,7 +17,7 @@ const HorizontalTab: FC<HorizontalTabProps> = ({ tabData, currentCity }) => {
   const [underlineStyle, setUnderlineStyle] = useState({ left: 0, width: 0 });
   const tabsRef = useRef<HTMLDivElement>(null);
 
-  const mounted = useMounted(); // ✅ replace hasMounted state
+  const mounted = useMounted();
   const { width } = useScreenSize();
   const isMobile = mounted && width < BREAK_POINT_LG;
 
