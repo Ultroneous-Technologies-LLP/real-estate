@@ -4,9 +4,9 @@ import { FC, useEffect } from "react";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 
+import useMounted from "@/hooks/useMounted";
+import useScreenSize from "@/hooks/useScreenSize";
 import { BREAK_POINT_LG } from "@/constants/constants";
-import useMounted from "@/components/hooks/useMounted";
-import useScreenSize from "@/components/hooks/useScreenSize";
 
 import Card from "./Card";
 import { DiscoverExperiencesSliderProps } from "./types";
@@ -29,7 +29,7 @@ const DiscoverExperiencesSlider: FC<DiscoverExperiencesSliderProps> = ({
     if (!isDesktop) slider.current?.update();
   }, [isDesktop, slider]);
 
-  if (!mounted) return null; // ✅ prevents hydration mismatch
+  if (!mounted) return null;
 
   return (
     <div className="w-full pt-6 xl:pt-26">
