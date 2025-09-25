@@ -1,18 +1,20 @@
 import data from "@/content/home-page.json";
 import { HomeDataType } from "@/components/home/types";
 import {
+  Hero,
+  GoingOnTrip,
   BestDeal,
   DiscoverExperiences,
-  GoingOnTrip,
-  Hero,
+  Testimonial,
 } from "@/components/home";
 
 const Home = () => {
   const {
-    bestDealSection,
-    goingOnTripSection,
     heroSection,
+    goingOnTripSection,
+    bestDealSection,
     discoverExperiencesSection,
+    testimonialSection,
   }: HomeDataType = data;
 
   return (
@@ -21,6 +23,7 @@ const Home = () => {
       <GoingOnTrip {...goingOnTripSection} />
       <BestDeal {...bestDealSection} />
       <DiscoverExperiences {...discoverExperiencesSection} />
+      <Testimonial {...testimonialSection} />
     </>
   );
 };
