@@ -1,9 +1,10 @@
-import Image from "next/image";
-import Link from "next/link";
 import { FC } from "react";
+import Link from "next/link";
+import Image from "next/image";
 
 import { Container } from "@/components/common";
 import { Facebook, Instagram, Twitter } from "@/components/icons";
+import { FACEBOOK_URL, INSTAGRAM_URL, TWITTER_URL } from "@/constants";
 
 import { FooterProps } from "./types";
 
@@ -26,7 +27,7 @@ const Footer: FC<FooterProps> = ({ anyDoubts, contactUs, logo, navLinks }) => (
             className="mx-auto"
           />
         </Link>
-        <p className="text-white te-xl xl:text-2xl/6 font-semibold font-lufga-preload text-center pt-3 xl:pt-3.5">
+        <p className="text-white text-xl xl:text-2xl/6 font-semibold font-lufga-preload text-center pt-3 xl:pt-3.5">
           <span>{logo.title}</span>
         </p>
       </div>
@@ -42,7 +43,7 @@ const Footer: FC<FooterProps> = ({ anyDoubts, contactUs, logo, navLinks }) => (
             <li key={value.id}>
               <Link
                 href={value.links}
-                className="text-base leading-6 xl:leading-9 font-medium font-lufga-preload text-white"
+                className="text-base leading-6 xl:leading-9 font-medium font-lufga-preload text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 rounded"
                 aria-label={`Go to ${value.title}`}
               >
                 <span>{value.title}</span>
@@ -56,17 +57,26 @@ const Footer: FC<FooterProps> = ({ anyDoubts, contactUs, logo, navLinks }) => (
         role="list"
         aria-label="Social media links"
       >
-        <Link href="https://facebook.com" aria-label="Visit our Facebook page">
-          <Facebook className="text-white" aria-hidden="true" />
-        </Link>
-        <Link href="https://twitter.com" aria-label="Visit our Twitter page">
-          <Twitter className="text-white" aria-hidden="true" />
+        <Link
+          href={FACEBOOK_URL}
+          aria-label="Visit our Facebook page"
+          className="focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 rounded"
+        >
+          <Facebook aria-hidden="true" className="text-white" />
         </Link>
         <Link
-          href="https://instagram.com"
-          aria-label="Visit our Instagram page"
+          href={TWITTER_URL}
+          aria-label="Visit our Twitter page"
+          className="focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 rounded"
         >
-          <Instagram className="text-white" aria-hidden="true" />
+          <Twitter aria-hidden="true" className="text-white" />
+        </Link>
+        <Link
+          href={INSTAGRAM_URL}
+          aria-label="Visit our Instagram page"
+          className="focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 rounded"
+        >
+          <Instagram aria-hidden="true" className="text-white" />
         </Link>
       </div>
     </div>

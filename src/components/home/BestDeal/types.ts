@@ -1,5 +1,6 @@
+import { LOCATION_OPTIONS } from "@/constants";
+
 import { TabData } from "../types";
-import { LOCATION_OPTIONS } from "./constants";
 
 export interface DropdownProps {
   selectedCity: string;
@@ -17,6 +18,12 @@ export interface MobileSliderProps {
 
 export interface DesktopGridProps {
   items: TabData[keyof TabData];
+}
+
+export interface BestDealCardProps {
+  image: string;
+  title: string;
+  link: string;
 }
 
 export type TabKey = keyof TabData; // "Flat" | "Bungalow" | "Villa"

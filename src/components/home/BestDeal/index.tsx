@@ -6,17 +6,25 @@ import { Container } from "@/components/common";
 
 import Dropdown from "./Dropdown";
 import { BestDealProps } from "../types";
-import HorizontalTab from "./HorizontalTab";
 import { LocationOption } from "./types";
+import HorizontalTab from "./HorizontalTab";
 
 const BestDeal: FC<BestDealProps> = ({ description, tabData, title }) => {
   const [selectedCity, setSelectedCity] =
     useState<LocationOption>("Los Angeles");
 
   return (
-    <Container className="pt-20 xl:pt-39 pl-4 md:pl-6 xl:px-27" id="best-deals">
+    <Container
+      className="pt-20 xl:pt-39 pl-4 md:pl-6 xl:px-27"
+      id="best-deals"
+      role="region"
+      aria-labelledby="best-deals-title"
+    >
       <div className="relative flex flex-col xl:flex-row items-center justify-center">
-        <h2 className="text-2xl/9 md:text-[32px]/12 xl:text-5xl/12 font-lufga-preload text-police-blue text-center">
+        <h2
+          className="text-2xl/9 md:text-[32px]/12 xl:text-5xl/12 font-lufga-preload text-police-blue text-center"
+          id="best-deals-title"
+        >
           <span>{title}</span>
         </h2>
         <Dropdown

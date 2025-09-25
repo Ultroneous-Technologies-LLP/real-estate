@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import data from "@/content/layout.json";
 import { Footer, Header } from "@/components/layout";
 import { LayoutDataType } from "@/components/layout/types";
+
 import "./globals.css";
 
 const lufga = localFont({

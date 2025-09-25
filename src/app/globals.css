@@ -5,8 +5,22 @@
   --font-lufga: var(--font-lufga), sans-serif;
   --color-police-blue: #3f5260;
   --color-cadet-blue: #abb3c1;
+  --animate-marquee: marquee 30s linear infinite;
 }
 
 body {
   font-family: "Lufga", sans-serif;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.pause-marquee:hover {
+  animation-play-state: paused;
 }

@@ -24,7 +24,11 @@ const GoingOnTrip: FC<GoingOnTripProps> = ({
       <span className="block">{trip}</span>
       <span className="block font-semibold">{yourStay}</span>
     </h2>
-    <div className="pt-8 md:pt-12 xl:px-27 xl:pt-31.5 flex flex-col md:flex-row justify-between space-y-3">
+    <div
+      className="pt-8 md:pt-12 xl:px-27 xl:pt-31.5 flex flex-col md:flex-row justify-between space-y-3"
+      role="list"
+      aria-label="Trip guides"
+    >
       {guides.map((value, index) => (
         <React.Fragment key={value.id}>
           <article
@@ -34,8 +38,12 @@ const GoingOnTrip: FC<GoingOnTripProps> = ({
                 ? "md:max-w-42.5 xl:max-w-75"
                 : "md:max-w-42.5 xl:max-w-62.5"
             )}
+            role="listitem"
           >
-            <figure className="xl:max-h-22.5 xl:h-full w-6 h-6 xl:w-auto md:mx-auto">
+            <figure
+              className="xl:max-h-22.5 xl:h-full w-6 h-6 xl:w-auto md:mx-auto"
+              tabIndex={0}
+            >
               <Image
                 src={value.src}
                 width={value.width}
@@ -63,7 +71,7 @@ const GoingOnTrip: FC<GoingOnTripProps> = ({
             <div className="xl:pt-5 hidden md:block" aria-hidden="true">
               <Image
                 src={borderImg.src}
-                alt={borderImg.alt ?? "border"}
+                alt={borderImg.alt}
                 title={value.alt}
                 width={174}
                 height={11}

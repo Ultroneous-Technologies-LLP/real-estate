@@ -4,20 +4,24 @@ import Image from "next/image";
 import { ChangeEvent, useRef, useState } from "react";
 
 import { Search } from "@/components/icons";
-import useClickOutside from "@/hooks/useClickOutside";
+import { LOCATION_OPTIONS } from "@/constants";
+import { BREAK_POINT_Mobile } from "@/constants";
 
 import { HeroEnum } from "./hero";
-import { locationOptions } from "./constants";
+import { useClickOutside, useMounted, useScreenSize } from "@/hooks";
 
 const LocationAndPropertySearch = () => {
   const [isLocationOpen, setIsLocationOpen] = useState(false);
   const [location, setLocation] = useState("");
 
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const { width } = useScreenSize();
+  const mounted = useMounted();
+  const isMobile = mounted && width < BREAK_POINT_Mobile;
 
+  const dropdownRef = useRef<HTMLDivElement>(null);
   useClickOutside(dropdownRef, () => setIsLocationOpen(false));
 
-  const filteredOptions = locationOptions.filter((city) =>
+  const filteredOptions = LOCATION_OPTIONS.filter((city) =>
     city.toLowerCase().includes(location.toLowerCase())
   );
 
@@ -33,12 +37,17 @@ const LocationAndPropertySearch = () => {
 
   return (
     <div
-      className="max-w-89.5 md:max-w-180 left-1/2 xl:left-[unset] -translate-x-1/2 xl:-translate-x-[unset] w-full absolute xl:static bg-white/70 backdrop-blur-[2px] md:backdrop-blur-none xl:bg-white xl:shadow-[0_4px_4px_0_#D4D4D440] rounded-2xl p-6 xl:px-6 mt-6 xl:mt-18.5 xl:py-4.5 
-    flex flex-col md:flex-row justify-between"
+      className={`max-w-89.5 w-full left-1/2 -translate-x-1/2 absolute bg-white/70 backdrop-blur-[2px] rounded-2xl p-6 mt-6 flex flex-col justify-between
+      md:backdrop-blur-none md:max-w-180 md:flex-row
+      xl:left-[unset] xl:-translate-x-[unset] xl:static xl:bg-white xl:shadow-[0_4px_4px_0_#D4D4D440] xl:px-6 xl:mt-18.5 xl:py-4.5`}
     >
       <div className="flex flex-col md:flex-row md:max-w-130 xl:max-w-110 w-full">
         <div
           ref={dropdownRef}
+          role="combobox"
+          aria-expanded={isLocationOpen}
+          aria-controls="location-listbox"
+          aria-haspopup="listbox"
           className="md:max-w-65.5 xl:max-w-46 w-full md:pr-7.5 md:border-r md:border-[#A8B1B8] pt-1 relative mb-4 md:mb-0"
         >
           <div
@@ -51,16 +60,18 @@ const LocationAndPropertySearch = () => {
             >
               {HeroEnum.LOCATION}
             </label>
-            <Image
-              src="/assets/icons/dropdown.svg"
-              width={7}
-              height={5}
-              alt="dropdown-close"
-              title="dropdown-close"
-              className={`cursor-pointer transition-transform duration-300 ${
-                isLocationOpen ? "rotate-180" : "rotate-0"
-              }`}
-            />
+            {mounted && (
+              <Image
+                src="/assets/icons/dropdown.svg"
+                width={7}
+                height={5}
+                alt="dropdown-close"
+                title="dropdown-close"
+                className={`cursor-pointer transition-transform duration-300 ${
+                  isLocationOpen ? "rotate-180" : "rotate-0"
+                }`}
+              />
+            )}
           </div>
           <input
             id="location"
@@ -69,16 +80,25 @@ const LocationAndPropertySearch = () => {
             value={location || ""}
             onChange={handleInputChange}
             autoComplete="off"
+            aria-autocomplete="list"
+            aria-controls="location-listbox"
+            aria-activedescendant={isLocationOpen ? location : undefined}
+            onFocus={() => setIsLocationOpen(true)}
           />
-          {isLocationOpen && (
+          {mounted && isLocationOpen && (
             <ul
-              suppressHydrationWarning
-              className="absolute z-10 mt-3 bg-white shadow-md rounded-lg w-full border border-gray-200"
+              id="location-listbox"
+              role="listbox"
+              className={`absolute z-10 mt-3 bg-white shadow-md rounded-lg w-full border border-gray-200 ${
+                isLocationOpen ? "block" : "hidden"
+              }`}
             >
               {filteredOptions.length > 0 ? (
                 filteredOptions.map((loc) => (
                   <li
                     key={loc}
+                    role="option"
+                    aria-selected={location === loc}
                     className="px-3 py-2 cursor-pointer hover:bg-gray-100 hover:rounded-lg"
                     onClick={() => handleOnClick(loc)}
                   >
@@ -109,16 +129,18 @@ const LocationAndPropertySearch = () => {
           />
         </div>
       </div>
-      <div className="hidden md:flex rounded-full justify-center items-center bg-police-blue size-14 cursor-pointer">
-        <Search className="text-white" />
+      <div className="hidden md:flex rounded-full justify-center items-center bg-police-blue size-14 cursor-pointer group hover:bg-[#97A4AE] duration-300 ease-in-out">
+        <Search className="text-white group-hover:text-[#F7F8F9]" />
       </div>
-      <button
-        type="button"
-        aria-label="search-button"
-        className="rounded-xl bg-police-blue py-3 px-4 font-lufga-preload font-semibold text-base/normal tracking-widest text-[#F7F8F9] w-fit mt-4 md:hidden"
-      >
-        {HeroEnum.BUTTONTEXT}
-      </button>
+      {isMobile && (
+        <button
+          type="button"
+          aria-label="search-button"
+          className="rounded-xl bg-police-blue py-3 px-4 font-lufga-preload font-semibold text-base/normal tracking-widest text-[#F7F8F9] w-fit mt-4"
+        >
+          {HeroEnum.BUTTONTEXT}
+        </button>
+      )}
     </div>
   );
 };

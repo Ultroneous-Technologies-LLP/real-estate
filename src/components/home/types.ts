@@ -22,7 +22,7 @@ interface DiscoverExperiencesSlider {
   title: string;
 }
 
-interface SliderData {
+export interface SliderData {
   id: number;
   name: string;
   position: string;
