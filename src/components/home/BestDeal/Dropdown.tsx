@@ -40,7 +40,6 @@ const Dropdown: FC<DropdownProps> = ({ selectedCity, setSelectedCity }) => {
           })}
         />
       </button>
-
       {isLocationOpen && (
         <ul
           id="city-list"

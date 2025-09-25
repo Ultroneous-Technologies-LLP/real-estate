@@ -13,9 +13,9 @@ import { useClickOutside, useMounted, useScreenSize } from "@/hooks";
 const LocationAndPropertySearch = () => {
   const [isLocationOpen, setIsLocationOpen] = useState(false);
   const [location, setLocation] = useState("");
+  const mounted = useMounted();
 
   const { width } = useScreenSize();
-  const mounted = useMounted();
   const isMobile = mounted && width < BREAK_POINT_Mobile;
 
   const dropdownRef = useRef<HTMLDivElement>(null);
