@@ -119,51 +119,51 @@
       "San Diego": {
         "Flat": [
           {
-            "image": "/images/sd-flat1.jpg",
+            "image": "/assets/images/tab/san-diego-flat-1.avif",
             "title": "123 Harbor St, San Diego, CA 92101, United States",
             "link": "/"
           },
           {
-            "image": "/images/sd-flat2.jpg",
+            "image": "/assets/images/tab/san-diego-flat-2.avif",
             "title": "456 Pacific Hwy, San Diego, CA 92101, United States",
             "link": "/"
           },
           {
-            "image": "/images/sd-flat3.jpg",
+            "image": "/assets/images/tab/san-diego-flat-3.avif",
             "title": "789 Sunset Blvd, San Diego, CA 92103, United States",
             "link": "/"
           }
         ],
         "Bungalow": [
           {
-            "image": "/images/sd-bungalow1.jpg",
+            "image": "/assets/images/tab/san-diego-bungalow-1.avif",
             "title": "101 Ocean Dr, San Diego, CA 92109, United States",
             "link": "/"
           },
           {
-            "image": "/images/sd-bungalow2.jpg",
+            "image": "/assets/images/tab/san-diego-bungalow-2.avif",
             "title": "202 Bayview Ave, San Diego, CA 92109, United States",
             "link": "/"
           },
           {
-            "image": "/images/sd-bungalow3.jpg",
+            "image": "/assets/images/tab/san-diego-bungalow-3.avif",
             "title": "303 Seaside Rd, San Diego, CA 92109, United States",
             "link": "/"
           }
         ],
         "Villa": [
           {
-            "image": "/images/sd-villa1.jpg",
+            "image": "/assets/images/tab/san-diego-villa-1.avif",
             "title": "1500 Palm St, San Diego, CA 92107, United States",
             "link": "/"
           },
           {
-            "image": "/images/sd-villa2.jpg",
+            "image": "/assets/images/tab/san-diego-villa-2.avif",
             "title": "1600 Sunset Cliffs Blvd, San Diego, CA 92107, United States",
             "link": "/"
           },
           {
-            "image": "/images/sd-villa3.jpg",
+            "image": "/assets/images/tab/san-diego-villa-3.avif",
             "title": "1700 La Jolla Shores Dr, San Diego, CA 92107, United States",
             "link": "/"
           }
@@ -172,51 +172,51 @@
       "San Francisco": {
         "Flat": [
           {
-            "image": "/images/sf-flat1.jpg",
+            "image": "/assets/images/tab/san-francisco-flat-1.avif",
             "title": "123 Market St, San Francisco, CA 94103, United States",
             "link": "/"
           },
           {
-            "image": "/images/sf-flat2.jpg",
+            "image": "/assets/images/tab/san-francisco-flat-2.avif",
             "title": "456 Mission St, San Francisco, CA 94105, United States",
             "link": "/"
           },
           {
-            "image": "/images/sf-flat3.jpg",
+            "image": "/assets/images/tab/san-francisco-flat-3.avif",
             "title": "789 Howard St, San Francisco, CA 94107, United States",
             "link": "/"
           }
         ],
         "Bungalow": [
           {
-            "image": "/images/sf-bungalow1.jpg",
+            "image": "/assets/images/tab/san-francisco-bungalow-1.avif",
             "title": "3961 24th St, San Francisco, CA 94114, United States",
             "link": "/"
           },
           {
-            "image": "/images/sf-bungalow2.jpg",
+            "image": "/assets/images/tab/san-francisco-bungalow-2.avif",
             "title": "4100 Mission St, San Francisco, CA 94112, United States",
             "link": "/"
           },
           {
-            "image": "/images/sf-bungalow3.jpg",
+            "image": "/assets/images/tab/san-francisco-bungalow-3.avif",
             "title": "4200 Castro St, San Francisco, CA 94114, United States",
             "link": "/"
           }
         ],
         "Villa": [
           {
-            "image": "/images/sf-villa1.jpg",
+            "image": "/assets/images/tab/san-francisco-villa-1.avif",
             "title": "789 Lombard St, San Francisco, CA 94133, United States",
             "link": "/"
           },
           {
-            "image": "/images/sf-villa2.jpg",
+            "image": "/assets/images/tab/san-francisco-villa-2.avif",
             "title": "1010 Pacific Ave, San Francisco, CA 94109, United States",
             "link": "/"
           },
           {
-            "image": "/images/sf-villa3.jpg",
+            "image": "/assets/images/tab/san-francisco-villa-3.avif",
             "title": "1111 Clay St, San Francisco, CA 94108, United States",
             "link": "/"
           }
@@ -225,51 +225,51 @@
       "Sacramento": {
         "Flat": [
           {
-            "image": "/images/sac-flat1.jpg",
+            "image": "/assets/images/tab/sacramento-flat-1.avif",
             "title": "123 Capitol Mall, Sacramento, CA 95814, United States",
             "link": "/"
           },
           {
-            "image": "/images/sac-flat2.jpg",
+            "image": "/assets/images/tab/sacramento-flat-2.avif",
             "title": "456 K St, Sacramento, CA 95814, United States",
             "link": "/"
           },
           {
-            "image": "/images/sac-flat3.jpg",
+            "image": "/assets/images/tab/san-diego-flat-3.avif",
             "title": "789 L St, Sacramento, CA 95814, United States",
             "link": "/"
           }
         ],
         "Bungalow": [
           {
-            "image": "/images/sac-bungalow1.jpg",
+            "image": "/assets/images/tab/sacramento-bungalow-1.avif",
             "title": "1010 H St, Sacramento, CA 95814, United States",
             "link": "/"
           },
           {
-            "image": "/images/sac-bungalow2.jpg",
+            "image": "/assets/images/tab/sacramento-bungalow-2.avif",
             "title": "2020 J St, Sacramento, CA 95814, United States",
             "link": "/"
           },
           {
-            "image": "/images/sac-bungalow3.jpg",
+            "image": "/assets/images/tab/sacramento-bungalow-3.avif",
             "title": "3030 K St, Sacramento, CA 95814, United States",
             "link": "/"
           }
         ],
         "Villa": [
           {
-            "image": "/images/sac-villa1.jpg",
+            "image": "/assets/images/tab/sacramento-villa-1.avif",
             "title": "1500 N St, Sacramento, CA 95814, United States",
             "link": "/"
           },
           {
-            "image": "/images/sac-villa2.jpg",
+            "image": "/assets/images/tab/sacramento-villa-2.avif",
             "title": "1600 P St, Sacramento, CA 95814, United States",
             "link": "/"
           },
           {
-            "image": "/images/sac-villa3.jpg",
+            "image": "/assets/images/tab/sacramento-villa-3.avif",
             "title": "1700 Q St, Sacramento, CA 95814, United States",
             "link": "/"
           }
@@ -278,105 +278,52 @@
       "Oakland": {
         "Flat": [
           {
-            "image": "/images/oak-flat1.jpg",
+            "image": "/assets/images/tab/oakland-flat-1.avif",
             "title": "123 Broadway, Oakland, CA 94607, United States",
             "link": "/"
           },
           {
-            "image": "/images/oak-flat2.jpg",
+            "image": "/assets/images/tab/oakland-flat-2.avif",
             "title": "456 Telegraph Ave, Oakland, CA 94612, United States",
             "link": "/"
           },
           {
-            "image": "/images/oak-flat3.jpg",
+            "image": "/assets/images/tab/oakland-flat-3.avif",
             "title": "789 Lakeshore Ave, Oakland, CA 94610, United States",
             "link": "/"
           }
         ],
         "Bungalow": [
           {
-            "image": "/images/oak-bungalow1.jpg",
+            "image": "/assets/images/tab/oakland-bungalow-1.avif",
             "title": "1010 MacArthur Blvd, Oakland, CA 94609, United States",
             "link": "/"
           },
           {
-            "image": "/images/oak-bungalow2.jpg",
+            "image": "/assets/images/tab/oakland-bungalow-2.avif",
             "title": "2020 Grand Ave, Oakland, CA 94610, United States",
             "link": "/"
           },
           {
-            "image": "/images/oak-bungalow3.jpg",
+            "image": "/assets/images/tab/oakland-bungalow-3.avif",
             "title": "3030 Fruitvale Ave, Oakland, CA 94601, United States",
             "link": "/"
           }
         ],
         "Villa": [
           {
-            "image": "/images/oak-villa1.jpg",
+            "image": "/assets/images/tab/oakland-villa-1.avif",
             "title": "1500 Piedmont Ave, Oakland, CA 94611, United States",
             "link": "/"
           },
           {
-            "image": "/images/oak-villa2.jpg",
+            "image": "/assets/images/tab/oakland-villa-2.avif",
             "title": "1600 Claremont Ave, Oakland, CA 94618, United States",
             "link": "/"
           },
           {
-            "image": "/images/oak-villa3.jpg",
+            "image": "/assets/images/tab/oakland-villa-3.avif",
             "title": "1700 College Ave, Oakland, CA 94618, United States",
-            "link": "/"
-          }
-        ]
-      },
-      "Lafayette": {
-        "Flat": [
-          {
-            "image": "/images/laf-flat1.jpg",
-            "title": "3728 St Francis Dr, Lafayette, CA 94549, United States",
-            "link": "/"
-          },
-          {
-            "image": "/images/laf-flat2.jpg",
-            "title": "123 Pleasant Hill Rd, Lafayette, CA 94549, United States",
-            "link": "/"
-          },
-          {
-            "image": "/images/laf-flat3.jpg",
-            "title": "456 Deer Hill Rd, Lafayette, CA 94549, United States",
-            "link": "/"
-          }
-        ],
-        "Bungalow": [
-          {
-            "image": "/images/laf-bungalow1.jpg",
-            "title": "789 Oak St, Lafayette, CA 94549, United States",
-            "link": "/"
-          },
-          {
-            "image": "/images/laf-bungalow2.jpg",
-            "title": "101 Pine St, Lafayette, CA 94549, United States",
-            "link": "/"
-          },
-          {
-            "image": "/images/laf-bungalow3.jpg",
-            "title": "202 Maple Ave, Lafayette, CA 94549, United States",
-            "link": "/"
-          }
-        ],
-        "Villa": [
-          {
-            "image": "/images/laf-villa1.jpg",
-            "title": "303 Elm St, Lafayette, CA 94549, United States",
-            "link": "/"
-          },
-          {
-            "image": "/images/laf-villa2.jpg",
-            "title": "404 Cedar Ave, Lafayette, CA 94549, United States",
-            "link": "/"
-          },
-          {
-            "image": "/images/laf-villa3.jpg",
-            "title": "505 Walnut St, Lafayette, CA 94549, United States",
             "link": "/"
           }
         ]
