@@ -22,6 +22,15 @@ interface DiscoverExperiencesSlider {
   title: string;
 }
 
+interface SliderData {
+  id: number;
+  name: string;
+  position: string;
+  testimonial: string;
+  src: string;
+  alt: string;
+}
+
 export interface HeroProps {
   image: Image;
   youFocus: string;
@@ -59,10 +68,16 @@ export interface DiscoverExperiencesProps {
   description: string;
   discoverExperiencesSlider: DiscoverExperiencesSlider[];
 }
+export interface TestimonialProps {
+  title: string;
+  travelersExperience: string;
+  sliderData: SliderData[];
+}
 
 export interface HomeDataType {
   heroSection: HeroProps;
   goingOnTripSection: GoingOnTripProps;
   bestDealSection: BestDealProps;
   discoverExperiencesSection: DiscoverExperiencesProps;
+  testimonialSection: TestimonialProps;
 }
