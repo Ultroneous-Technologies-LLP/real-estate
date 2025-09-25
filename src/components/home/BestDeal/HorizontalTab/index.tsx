@@ -1,11 +1,10 @@
 "use client";
 
-import { FC, useEffect, useRef, useState } from "react";
 import clsx from "clsx";
+import { FC, useEffect, useRef, useState } from "react";
 
-import useMounted from "@/hooks/useMounted";
-import useScreenSize from "@/hooks/useScreenSize";
-import { BREAK_POINT_LG } from "@/constants/constants";
+import { BREAK_POINT_LG } from "@/constants";
+import { useMounted, useScreenSize } from "@/hooks";
 
 import { TABS } from "../constants";
 import DesktopTab from "./DesktopTab";
@@ -43,10 +42,16 @@ const HorizontalTab: FC<HorizontalTabProps> = ({ tabData, currentCity }) => {
       <div
         ref={tabsRef}
         className="flex gap-2 xl:gap-32 justify-center relative pr-4 md:pr-6 xl:pr-0"
+        role="tablist"
+        aria-label="Property categories"
       >
         {TABS.map((tab) => (
           <button
             key={tab}
+            role="tab"
+            aria-selected={activeTab === tab}
+            aria-controls={`tabpanel-${tab}`}
+            id={`tab-${tab}`}
             onClick={() => setActiveTab(tab)}
             className={clsx(
               "text-xl/7.5 xl:text-3xl/6.5 font-lufga-preload transition-colors duration-700 ease-in-out cursor-pointer p-4 md:px-10 md:py-4 xl:px-0 xl:pt-0 xl:pb-4",
@@ -67,11 +72,18 @@ const HorizontalTab: FC<HorizontalTabProps> = ({ tabData, currentCity }) => {
           }}
         />
       </div>
-      {isMobile ? (
-        <MobileSlider items={currentItems} />
-      ) : (
-        <DesktopTab items={currentItems} />
-      )}
+
+      <div
+        id={`tabpanel-${activeTab}`}
+        role="tabpanel"
+        aria-labelledby={`tab-${activeTab}`}
+      >
+        {isMobile ? (
+          <MobileSlider items={currentItems} />
+        ) : (
+          <DesktopTab items={currentItems} />
+        )}
+      </div>
     </div>
   );
 };

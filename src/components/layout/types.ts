@@ -16,6 +16,12 @@ export interface FooterProps {
   contactUs: string;
   navLinks: NavLinks[];
 }
+export interface MobileMenuProps {
+  mounted: boolean;
+  isMenuOpen: boolean;
+  setIsMenuOpen: (open: boolean) => void;
+  navLinks: NavLinks[];
+}
 
 export interface LayoutDataType {
   header: HeaderProps;

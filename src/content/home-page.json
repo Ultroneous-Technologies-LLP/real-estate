@@ -55,7 +55,7 @@
     ],
     "borderImg": {
       "src": "/assets/icons/border.svg",
-      "alt": "border"
+      "alt": "decorative border"
     }
   },
   "bestDealSection": {
@@ -416,7 +416,7 @@
         "name": "Andrew Pual",
         "position": "CEO at UIUT",
         "testimonial": "Booking through you was very easy and made our lives so much easier. I have nothing bad to say! Thank you for giving us tips and guidance before we left on what to bring and such, that was very helpful!",
-        "src": "/assets/images/andrew-pual.svg",
+        "src": "/assets/images/andrew-pual.avif",
         "alt": "Andrew Pual"
       },
       {
@@ -424,7 +424,7 @@
         "name": "Mike C.",
         "position": "Founder at GIT",
         "testimonial": "The trip was wonderful - lots of great memories were made. All the arrangements went as planned.",
-        "src": "/assets/images/Mike.svg",
+        "src": "/assets/images/Mike.avif",
         "alt": "Mike C"
       },
       {
@@ -432,7 +432,7 @@
         "name": "Mathew Warne",
         "position": "Manager at UNT",
         "testimonial": " I had a fantastic experience with both my Greece and Turkey trip. In Greece, I was in Athens and Santorini ( the Villa in Santorini is one the best I have ever stayed).",
-        "src": "/assets/images/mathew-warne.svg",
+        "src": "/assets/images/mathew-warne.avif",
         "alt": "Mathew Warne"
       },
       {
@@ -440,7 +440,7 @@
         "name": "Andrew Pual",
         "position": "CEO at UIUT",
         "testimonial": "Booking through you was very easy and made our lives so much easier. I have nothing bad to say! Thank you for giving us tips and guidance before we left on what to bring and such, that was very helpful!",
-        "src": "/assets/images/andrew-pual.svg",
+        "src": "/assets/images/andrew-pual.avif",
         "alt": "Andrew Pual"
       },
       {
@@ -448,7 +448,7 @@
         "name": "Mike C.",
         "position": "Founder at GIT",
         "testimonial": "The trip was wonderful - lots of great memories were made. All the arrangements went as planned.",
-        "src": "/assets/images/Mike.svg",
+        "src": "/assets/images/Mike.avif",
         "alt": "Mike C"
       }
     ]
