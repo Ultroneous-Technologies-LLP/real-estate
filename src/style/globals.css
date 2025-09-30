@@ -3,9 +3,16 @@
 @theme inline {
   --font-lufga-preload: var(--font-lufga-preload), sans-serif;
   --font-lufga: var(--font-lufga), sans-serif;
+
   --color-police-blue: #3f5260;
   --color-cadet-blue: #abb3c1;
+  --color-cadet-grey: #97a4ae;
+  --color-cadet-blue-crayola: #a8b1b8;
+  --color-cultured: #f7f8f9;
+
   --animate-marquee: marquee 30s linear infinite;
+
+  --text-32: 32px;
 }
 
 body {

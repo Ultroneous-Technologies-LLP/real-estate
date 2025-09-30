@@ -57,7 +57,7 @@ const HorizontalTab: FC<HorizontalTabProps> = ({ tabData, currentCity }) => {
               "text-xl/7.5 xl:text-3xl/6.5 font-lufga-preload transition-colors duration-700 ease-in-out cursor-pointer p-4 md:px-10 md:py-4 xl:px-0 xl:pt-0 xl:pb-4",
               {
                 "text-[#3F5260]": activeTab === tab,
-                "text-[#A8B1B8]": activeTab !== tab,
+                "text-cadet-blue-crayola": activeTab !== tab,
               }
             )}
           >
@@ -65,7 +65,7 @@ const HorizontalTab: FC<HorizontalTabProps> = ({ tabData, currentCity }) => {
           </button>
         ))}
         <span
-          className="absolute bottom-0 h-1 bg-[#A8B1B8] transition-all duration-300 ease-in-out"
+          className="absolute bottom-0 h-1 bg-cadet-blue-crayola transition-all duration-300 ease-in-out"
           style={{
             left: underlineStyle.left,
             width: underlineStyle.width,

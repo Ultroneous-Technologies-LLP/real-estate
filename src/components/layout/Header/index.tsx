@@ -114,7 +114,7 @@ const Header: FC<HeaderProps> = ({ button, logo, navLinks }) => {
                       <span>{value.title}</span>
                     </Link>
                     {showUnderline && (
-                      <span className="absolute bottom-[-4px] left-1/2 -translate-x-1/2 w-8 h-[2px] bg-police-blue rounded-full" />
+                      <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-police-blue rounded-full" />
                     )}
                   </li>
                 );
@@ -123,8 +123,8 @@ const Header: FC<HeaderProps> = ({ button, logo, navLinks }) => {
           </div>
           <div className="flex gap-3 items-center max-w-36 md:max-w-27.5 xl:max-w-37.5 w-full">
             <button
-              className="cursor-pointer py-3 px-4 md:px-5 xl:py-1.5 xl:px-10 rounded-[10px] bg-police-blue text-[#F7F8F9] text-base leading-normal 
-              xl:leading-9 font-lufga-preload font-semibold uppercase w-full hover:bg-[#97A4AE] transition-colors duration-500 ease-in-out"
+              className="cursor-pointer py-3 px-4 md:px-5 xl:py-1.5 xl:px-10 rounded-[10px] bg-police-blue text-cultured text-base leading-normal 
+              xl:leading-9 font-lufga-preload font-semibold uppercase w-full hover:bg-cadet-grey transition-colors duration-500 ease-in-out"
               type="button"
             >
               <span>{button.title}</span>

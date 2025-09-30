@@ -19,12 +19,12 @@ const Hero: FC<HeroProps> = ({
     aria-label="Hero Section"
   >
     <div className="max-w-150 w-full xl:pt-32 px-4 md:px-0">
-      <h1 className="text-[32px]/12 xl:text-5xl/12 font-lufga-preload flex flex-col gap-3 xl:gap-4 text-police-blue pb-4 md:pb-3 xl:pb-6.5">
+      <h1 className="text-32/12 xl:text-5xl/12 font-lufga-preload flex flex-col gap-3 xl:gap-4 text-police-blue pb-4 md:pb-3 xl:pb-6.5">
         <span className="block">{youFocus}</span>
         <span className="block font-semibold">{manageYourStay}</span>
       </h1>
       <p
-        className="text-xs/3 xl:text-2xl/6 font-lufga-preload xl:max-w-137.5 w-full text-[#A8B1B8] xl:space-y-3"
+        className="text-xs/3 xl:text-2xl/6 font-lufga-preload xl:max-w-137.5 w-full text-cadet-blue-crayola xl:space-y-3"
         aria-label="Hero description"
       >
         {description.map((value) => (
