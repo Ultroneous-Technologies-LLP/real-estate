@@ -1,6 +1,6 @@
 import { SVGProps } from "react";
 
-const Search = ({
+export const Search = ({
   width = 22,
   height = 22,
   ...svgProps
@@ -20,5 +20,3 @@ const Search = ({
     />
   </svg>
 );
-
-export default Search;
