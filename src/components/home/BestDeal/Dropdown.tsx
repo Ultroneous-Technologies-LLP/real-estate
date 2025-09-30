@@ -25,7 +25,7 @@ const Dropdown: FC<DropdownProps> = ({ selectedCity, setSelectedCity }) => {
         aria-controls="city-list"
         onClick={() => setIsLocationOpen((prev) => !prev)}
       >
-        <span className="text-2xl/9 md:text-[32px]/12 xl:text-5xl/12 font-lufga-preload font-semibold text-police-blue">
+        <span className="text-2xl/9 md:text-32/12 xl:text-5xl/12 font-lufga-preload font-semibold text-police-blue">
           {selectedCity}
         </span>
         <Image

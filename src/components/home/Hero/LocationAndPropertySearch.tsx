@@ -48,7 +48,7 @@ const LocationAndPropertySearch = () => {
           aria-expanded={isLocationOpen}
           aria-controls="location-listbox"
           aria-haspopup="listbox"
-          className="md:max-w-65.5 xl:max-w-46 w-full md:pr-7.5 md:border-r md:border-[#A8B1B8] pt-1 relative mb-4 md:mb-0"
+          className="md:max-w-65.5 xl:max-w-46 w-full md:pr-7.5 md:border-r md:border-cadet-blue-crayola pt-1 relative mb-4 md:mb-0"
         >
           <div
             className="flex gap-5 items-center pb-2.5"
@@ -129,14 +129,14 @@ const LocationAndPropertySearch = () => {
           />
         </div>
       </div>
-      <div className="hidden md:flex rounded-full justify-center items-center bg-police-blue size-14 cursor-pointer group hover:bg-[#97A4AE] duration-300 ease-in-out">
-        <Search className="text-white group-hover:text-[#F7F8F9]" />
+      <div className="hidden md:flex rounded-full justify-center items-center bg-police-blue size-14 cursor-pointer group hover:bg-cadet-grey duration-300 ease-in-out">
+        <Search className="text-white group-hover:text-cultured" />
       </div>
       {isMobile && (
         <button
           type="button"
           aria-label="search-button"
-          className="rounded-xl bg-police-blue py-3 px-4 font-lufga-preload font-semibold text-base/normal tracking-widest text-[#F7F8F9] w-fit mt-4"
+          className="rounded-xl bg-police-blue py-3 px-4 font-lufga-preload font-semibold text-base/normal tracking-widest text-cultured w-fit mt-4"
         >
           {HeroEnum.BUTTONTEXT}
         </button>

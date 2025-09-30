@@ -21,7 +21,7 @@ const Card: FC<CardProps> = ({ title, alt, src }) => (
       alt={alt || title}
       className="object-cover rounded-md"
     />
-    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-colors duration-500 rounded-lg xl:max-w-[349px]" />
+    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-colors duration-500 rounded-lg xl:max-w-87.5" />
     <div className="flex gap-6.5 items-center absolute bottom-6 w-fit left-4 text-white transition-opacity duration-500">
       <h3 className="text-xl/7.5 xl:text-3xl/10 font-lufga-preload font-semibold max-w-45 xl:max-w-56.5 w-full break-words">
         <span>{title}</span>

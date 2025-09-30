@@ -17,11 +17,11 @@ const DiscoverExperiences: FC<DiscoverExperiencesProps> = ({
   >
     <h2
       id="discover-experiences-title"
-      className="text-center text-police-blue font-lufga-preload font-semibold text-2xl/8.5 md:text-[32px]/12 xl:text-5xl/12 pb-1 xl:pb-4"
+      className="text-center text-police-blue font-lufga-preload font-semibold text-2xl/8.5 md:text-32/12 xl:text-5xl/12 pb-1 xl:pb-4"
     >
       <span>{title}</span>
     </h2>
-    <p className="text-center text-[#A8B1B8] font-lufga-preload text-xs/4.5 md:text-sm/5 xl:text-2xl/6.5">
+    <p className="text-center text-cadet-blue-crayola font-lufga-preload text-xs/4.5 md:text-sm/5 xl:text-2xl/6.5">
       <span>{description}</span>
     </p>
     <DiscoverExperiencesSlider data={discoverExperiencesSlider} />
