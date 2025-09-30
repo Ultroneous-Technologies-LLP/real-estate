@@ -22,8 +22,3 @@ export interface MobileMenuProps {
   setIsMenuOpen: (open: boolean) => void;
   navLinks: NavLinks[];
 }
-
-export interface LayoutDataType {
-  header: HeaderProps;
-  footer: FooterProps;
-}

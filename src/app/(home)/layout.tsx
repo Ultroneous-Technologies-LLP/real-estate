@@ -3,25 +3,20 @@ import localFont from "next/font/local";
 
 import data from "@/content/layout.json";
 import { Footer, Header } from "@/components/layout";
-import { LayoutDataType } from "@/components/layout/types";
 
-import "../style/globals.css";
+import "../../style/globals.css";
+import { LayoutDataType } from "./types";
 
 const lufga = localFont({
   src: [
     {
-      path: "../../public/assets/font/lufga-light.woff2",
+      path: "../../../public/assets/font/lufga-light.woff2",
       weight: "300",
       style: "normal",
     },
     {
-      path: "../../public/assets/font/lufga-bold.woff2",
+      path: "../../../public/assets/font/lufga-bold.woff2",
       weight: "700",
-      style: "normal",
-    },
-    {
-      path: "../../public/assets/font/lufga-extraBold.woff2",
-      weight: "800",
       style: "normal",
     },
   ],
@@ -33,17 +28,17 @@ const lufga = localFont({
 const lufgaPreload = localFont({
   src: [
     {
-      path: "../../public/assets/font/lufga-regular.woff2",
+      path: "../../../public/assets/font/lufga-regular.woff2",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../../public/assets/font/lufga-medium.woff2",
+      path: "../../../public/assets/font/lufga-medium.woff2",
       weight: "500",
       style: "normal",
     },
     {
-      path: "../../public/assets/font/lufga-semiBold.woff2",
+      path: "../../../public/assets/font/lufga-semiBold.woff2",
       weight: "600",
       style: "normal",
     },
