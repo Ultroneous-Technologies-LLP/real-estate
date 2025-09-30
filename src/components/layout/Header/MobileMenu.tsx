@@ -7,7 +7,7 @@ import Link from "next/link";
 import { FACEBOOK_URL, INSTAGRAM_URL, TWITTER_URL } from "@/constants";
 import { Cross, Facebook, Instagram, Twitter } from "@/components/icons";
 
-import { MobileMenuProps } from "../types";
+import { MobileMenuProps } from "./types";
 
 const MobileMenu: FC<MobileMenuProps> = ({
   mounted,

@@ -10,9 +10,9 @@ import { useMounted, useScreenSize } from "@/hooks";
 import { BREAK_POINT_MD } from "@/constants";
 
 import MobileMenu from "./MobileMenu";
-import { HeaderProps } from "../types";
+import { HeaderProps } from "./types";
 
-const Header: FC<HeaderProps> = ({ button, logo, navLinks }) => {
+export const Header: FC<HeaderProps> = ({ button, logo, navLinks }) => {
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string | null>(null);
@@ -166,5 +166,3 @@ const Header: FC<HeaderProps> = ({ button, logo, navLinks }) => {
     </nav>
   );
 };
-
-export default Header;

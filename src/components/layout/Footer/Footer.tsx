@@ -8,7 +8,12 @@ import { FACEBOOK_URL, INSTAGRAM_URL, TWITTER_URL } from "@/constants";
 
 import { FooterProps } from "./types";
 
-const Footer: FC<FooterProps> = ({ anyDoubts, contactUs, logo, navLinks }) => (
+export const Footer: FC<FooterProps> = ({
+  anyDoubts,
+  contactUs,
+  logo,
+  navLinks,
+}) => (
   <Container
     as="footer"
     backgroundClassName="bg-police-blue"
@@ -82,5 +87,3 @@ const Footer: FC<FooterProps> = ({ anyDoubts, contactUs, logo, navLinks }) => (
     </div>
   </Container>
 );
-
-export default Footer;
