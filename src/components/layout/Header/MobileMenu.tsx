@@ -9,7 +9,7 @@ import { Cross, Facebook, Instagram, Twitter } from "@/components/icons";
 
 import { MobileMenuProps } from "./types";
 
-const MobileMenu: FC<MobileMenuProps> = ({
+export const MobileMenu: FC<MobileMenuProps> = ({
   mounted,
   isMenuOpen,
   setIsMenuOpen,
@@ -90,5 +90,3 @@ const MobileMenu: FC<MobileMenuProps> = ({
     </div>
   );
 };
-
-export default MobileMenu;

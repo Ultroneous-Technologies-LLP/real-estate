@@ -1,29 +1,24 @@
 import { LOCATION_OPTIONS } from "@/constants";
 
-import { TabData } from "../types";
+interface BestDealItem {
+  image: string;
+  title: string;
+  link: string;
+}
 
+export interface TabData {
+  Flat: BestDealItem[];
+  Bungalow: BestDealItem[];
+  Villa: BestDealItem[];
+}
 export interface DropdownProps {
   selectedCity: string;
   setSelectedCity: (city: string) => void;
 }
-
-export interface HorizontalTabProps {
-  tabData: Record<string, TabData>;
-  currentCity: string;
-}
-
-export interface MobileSliderProps {
-  items: TabData[keyof TabData];
-}
-
-export interface DesktopGridProps {
-  items: TabData[keyof TabData];
-}
-
-export interface BestDealCardProps {
-  image: string;
+export interface BestDealProps {
   title: string;
-  link: string;
+  description: string;
+  tabData: Record<string, TabData>;
 }
 
 export type TabKey = keyof TabData; // "Flat" | "Bungalow" | "Villa"

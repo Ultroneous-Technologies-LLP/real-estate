@@ -2,10 +2,10 @@
 
 import { FC } from "react";
 
-import TestimonialCard from "./Card";
+import { TestimonialCard } from "./Card";
 import { TestimonialSliderProps } from "./types";
 
-const TestimonialAnimation: FC<TestimonialSliderProps> = ({ data }) => (
+export const TestimonialAnimation: FC<TestimonialSliderProps> = ({ data }) => (
   <div
     role="region"
     aria-roledescription="carousel"
@@ -19,5 +19,3 @@ const TestimonialAnimation: FC<TestimonialSliderProps> = ({ data }) => (
     </div>
   </div>
 );
-
-export default TestimonialAnimation;

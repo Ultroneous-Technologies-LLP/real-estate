@@ -6,12 +6,16 @@ import { FC, useEffect, useRef, useState } from "react";
 import { BREAK_POINT_LG } from "@/constants";
 import { useMounted, useScreenSize } from "@/hooks";
 
+import { TabKey } from "../types";
 import { TABS } from "../constants";
-import DesktopTab from "./DesktopTab";
-import MobileSlider from "./MobileSlider";
-import { HorizontalTabProps, TabKey } from "../types";
+import { DesktopTab } from "./DesktopTab";
+import { HorizontalTabProps } from "./types";
+import { MobileSlider } from "./MobileSlider";
 
-const HorizontalTab: FC<HorizontalTabProps> = ({ tabData, currentCity }) => {
+export const HorizontalTab: FC<HorizontalTabProps> = ({
+  tabData,
+  currentCity,
+}) => {
   const [activeTab, setActiveTab] = useState<TabKey>("Flat");
   const [underlineStyle, setUnderlineStyle] = useState({ left: 0, width: 0 });
   const tabsRef = useRef<HTMLDivElement>(null);
@@ -87,5 +91,3 @@ const HorizontalTab: FC<HorizontalTabProps> = ({ tabData, currentCity }) => {
     </div>
   );
 };
-
-export default HorizontalTab;

@@ -7,7 +7,7 @@ import { Arrow } from "@/components/icons";
 
 import { CardProps } from "./types";
 
-const Card: FC<CardProps> = ({ title, alt, src }) => (
+export const Card: FC<CardProps> = ({ title, alt, src }) => (
   <div
     className="relative w-full group"
     role="group"
@@ -35,5 +35,3 @@ const Card: FC<CardProps> = ({ title, alt, src }) => (
     </div>
   </div>
 );
-
-export default Card;

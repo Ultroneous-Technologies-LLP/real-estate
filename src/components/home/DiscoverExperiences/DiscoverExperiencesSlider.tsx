@@ -4,13 +4,13 @@ import { FC } from "react";
 import { SwiperSlide } from "swiper/react";
 
 import { BREAK_POINT_LG } from "@/constants";
+import { CustomSwiper } from "@/components/common";
 import { useMounted, useScreenSize } from "@/hooks";
-import CustomSwiper from "@/components/common/CustomSwiper";
 
-import Card from "./Card";
+import { Card } from "./Card";
 import { DiscoverExperiencesSliderProps } from "./types";
 
-const DiscoverExperiencesSlider: FC<DiscoverExperiencesSliderProps> = ({
+export const DiscoverExperiencesSlider: FC<DiscoverExperiencesSliderProps> = ({
   data,
 }) => {
   const mounted = useMounted();
@@ -51,5 +51,3 @@ const DiscoverExperiencesSlider: FC<DiscoverExperiencesSliderProps> = ({
     </div>
   );
 };
-
-export default DiscoverExperiencesSlider;

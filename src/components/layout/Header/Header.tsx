@@ -9,8 +9,8 @@ import { Container } from "@/components/common";
 import { useMounted, useScreenSize } from "@/hooks";
 import { BREAK_POINT_MD } from "@/constants";
 
-import MobileMenu from "./MobileMenu";
 import { HeaderProps } from "./types";
+import { MobileMenu } from "./MobileMenu";
 
 export const Header: FC<HeaderProps> = ({ button, logo, navLinks }) => {
   const [scrolled, setScrolled] = useState(false);

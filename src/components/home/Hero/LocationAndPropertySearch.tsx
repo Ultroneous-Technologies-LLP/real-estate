@@ -6,11 +6,11 @@ import { ChangeEvent, useRef, useState } from "react";
 import { Search } from "@/components/icons";
 import { LOCATION_OPTIONS } from "@/constants";
 import { BREAK_POINT_Mobile } from "@/constants";
-
-import { HeroEnum } from "./hero";
 import { useClickOutside, useMounted, useScreenSize } from "@/hooks";
 
-const LocationAndPropertySearch = () => {
+import { HeroEnum } from "./enum";
+
+export const LocationAndPropertySearch = () => {
   const [isLocationOpen, setIsLocationOpen] = useState(false);
   const [location, setLocation] = useState("");
   const mounted = useMounted();
@@ -144,5 +144,3 @@ const LocationAndPropertySearch = () => {
     </div>
   );
 };
-
-export default LocationAndPropertySearch;

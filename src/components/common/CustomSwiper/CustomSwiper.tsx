@@ -1,9 +1,11 @@
+"use client";
+
 import { FC } from "react";
-import { Swiper } from "swiper/react";
 
 import { CustomSwiperProps } from "./types";
+import { Swiper } from "swiper/react";
 
-const CustomSwiper: FC<CustomSwiperProps> = ({
+export const CustomSwiper: FC<CustomSwiperProps> = ({
   className = "",
   children,
   ...rest
@@ -19,5 +21,3 @@ const CustomSwiper: FC<CustomSwiperProps> = ({
     </Swiper>
   );
 };
-
-export default CustomSwiper;

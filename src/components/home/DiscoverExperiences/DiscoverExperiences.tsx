@@ -2,10 +2,10 @@ import { FC } from "react";
 
 import { Container } from "@/components/common";
 
-import { DiscoverExperiencesProps } from "../types";
-import DiscoverExperiencesSlider from "./DiscoverExperiencesSlider";
+import { DiscoverExperiencesProps } from "./types";
+import { DiscoverExperiencesSlider } from "./DiscoverExperiencesSlider";
 
-const DiscoverExperiences: FC<DiscoverExperiencesProps> = ({
+export const DiscoverExperiences: FC<DiscoverExperiencesProps> = ({
   title,
   description,
   discoverExperiencesSlider,
@@ -27,5 +27,3 @@ const DiscoverExperiences: FC<DiscoverExperiencesProps> = ({
     <DiscoverExperiencesSlider data={discoverExperiencesSlider} />
   </Container>
 );
-
-export default DiscoverExperiences;

@@ -6,13 +6,13 @@ import { Pagination } from "swiper/modules";
 import { FC, useRef, useState } from "react";
 import { Swiper as SwiperType } from "swiper";
 
-import CustomSwiper from "@/components/common/CustomSwiper";
+import { CustomSwiper } from "@/components/common";
 
-import TestimonialCard from "./Card";
 import { TestimonialSliderProps } from "./types";
 import { TESTIMONIAL_BREAKPOINTS } from "./constants";
+import { TestimonialCard } from "./Card";
 
-const TestimonialSlider: FC<TestimonialSliderProps> = ({ data }) => {
+export const TestimonialSlider: FC<TestimonialSliderProps> = ({ data }) => {
   const swiperRef = useRef<SwiperType | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -66,5 +66,3 @@ const TestimonialSlider: FC<TestimonialSliderProps> = ({ data }) => {
     </div>
   );
 };
-
-export default TestimonialSlider;

@@ -1,5 +1,4 @@
-import { SwiperProps } from "swiper/react";
-import { ComponentPropsWithoutRef, ReactElement, JSX, ReactNode } from "react";
+import { ComponentPropsWithoutRef, JSX, ReactElement } from "react";
 
 export type SupportedTags = Extract<
   keyof JSX.IntrinsicElements,
@@ -13,8 +12,3 @@ export type ContainerProps<T extends SupportedTags> = {
   className?: string;
   id?: string;
 } & ComponentPropsWithoutRef<T>;
-
-export interface CustomSwiperProps extends SwiperProps {
-  className?: string;
-  children: ReactNode;
-}
