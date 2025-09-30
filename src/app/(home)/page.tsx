@@ -1,5 +1,4 @@
 import data from "@/content/home-page.json";
-import { HomeDataType } from "@/components/home/types";
 import {
   Hero,
   GoingOnTrip,
@@ -7,6 +6,8 @@ import {
   DiscoverExperiences,
   Testimonial,
 } from "@/components/home";
+
+import { HomeDataType } from "./types";
 
 const Home = () => {
   const {
