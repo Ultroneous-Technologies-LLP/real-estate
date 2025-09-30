@@ -1,4 +1,4 @@
-import { Logo, NavLinks } from "@/types/common";
+import { Logo, NavLinks } from "@/types";
 
 interface Button {
   title: string;

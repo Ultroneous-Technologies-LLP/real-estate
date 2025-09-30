@@ -1,3 +1,5 @@
+// Common types
+
 export interface NavLinks {
   id: number;
   links: string;
