@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { forwardRef, ElementType } from "react";
 import { ContainerProps, SupportedTags } from "./types";
 
-const Container = forwardRef(
+export const Container = forwardRef(
   <T extends SupportedTags = "div">(
     {
       as,
@@ -38,5 +38,3 @@ const Container = forwardRef(
 );
 
 Container.displayName = "Container";
-
-export default Container;

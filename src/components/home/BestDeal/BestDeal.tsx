@@ -4,12 +4,15 @@ import { FC, useState } from "react";
 
 import { Container } from "@/components/common";
 
-import Dropdown from "./Dropdown";
-import { BestDealProps } from "../types";
-import { LocationOption } from "./types";
-import HorizontalTab from "./HorizontalTab";
+import { Dropdown } from "./Dropdown";
+import { HorizontalTab } from "./HorizontalTab";
+import { BestDealProps, LocationOption } from "./types";
 
-const BestDeal: FC<BestDealProps> = ({ description, tabData, title }) => {
+export const BestDeal: FC<BestDealProps> = ({
+  description,
+  tabData,
+  title,
+}) => {
   const [selectedCity, setSelectedCity] =
     useState<LocationOption>("Los Angeles");
 
@@ -39,5 +42,3 @@ const BestDeal: FC<BestDealProps> = ({ description, tabData, title }) => {
     </Container>
   );
 };
-
-export default BestDeal;

@@ -2,11 +2,11 @@ import { FC } from "react";
 import Image from "next/image";
 
 import { Container } from "@/components/common";
-import { HeroProps } from "@/components/home/types";
 
-import LocationAndPropertySearch from "./LocationAndPropertySearch";
+import { HeroProps } from "./types";
+import { LocationAndPropertySearch } from "./LocationAndPropertySearch";
 
-const Hero: FC<HeroProps> = ({
+export const Hero: FC<HeroProps> = ({
   description,
   image,
   manageYourStay,
@@ -48,5 +48,3 @@ const Hero: FC<HeroProps> = ({
     </div>
   </Container>
 );
-
-export default Hero;

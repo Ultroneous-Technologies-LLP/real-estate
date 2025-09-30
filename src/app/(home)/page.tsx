@@ -1,9 +1,10 @@
 import data from "@/content/home-page.json";
+
 import {
-  Hero,
-  GoingOnTrip,
   BestDeal,
   DiscoverExperiences,
+  GoingOnTrip,
+  Hero,
   Testimonial,
 } from "@/components/home";
 

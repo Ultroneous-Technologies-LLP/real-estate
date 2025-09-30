@@ -5,7 +5,7 @@ import Image from "next/image";
 
 import { TestimonialCardProps } from "./types";
 
-const TestimonialCard: FC<TestimonialCardProps> = ({
+export const TestimonialCard: FC<TestimonialCardProps> = ({
   name,
   position,
   testimonial,
@@ -35,5 +35,3 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
     <p className="text-xs lg:text-base font-lufga-preload">{testimonial}</p>
   </div>
 );
-
-export default TestimonialCard;

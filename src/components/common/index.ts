@@ -1,3 +1,2 @@
-import Container from "./Container";
-
-export { Container };
+export * from './Container'
+export * from './CustomSwiper/CustomSwiper'

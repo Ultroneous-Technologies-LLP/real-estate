@@ -9,7 +9,10 @@ import { LOCATION_OPTIONS } from "@/constants";
 
 import { DropdownProps } from "./types";
 
-const Dropdown: FC<DropdownProps> = ({ selectedCity, setSelectedCity }) => {
+export const Dropdown: FC<DropdownProps> = ({
+  selectedCity,
+  setSelectedCity,
+}) => {
   const [isLocationOpen, setIsLocationOpen] = useState<boolean>(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -79,5 +82,3 @@ const Dropdown: FC<DropdownProps> = ({ selectedCity, setSelectedCity }) => {
     </div>
   );
 };
-
-export default Dropdown;

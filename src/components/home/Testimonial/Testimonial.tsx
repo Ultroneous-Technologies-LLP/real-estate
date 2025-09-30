@@ -3,10 +3,10 @@
 import { FC } from "react";
 import { Container } from "@/components/common";
 
-import { TestimonialProps } from "../types";
-import TestimonialDisplay from "./TestimonialDisplay";
+import { TestimonialProps } from "./types";
+import { TestimonialDisplay } from "./TestimonialDisplay";
 
-const Testimonial: FC<TestimonialProps> = ({
+export const Testimonial: FC<TestimonialProps> = ({
   sliderData,
   title,
   travelersExperience,
@@ -29,5 +29,3 @@ const Testimonial: FC<TestimonialProps> = ({
     </Container>
   );
 };
-
-export default Testimonial;

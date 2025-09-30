@@ -3,10 +3,9 @@ import React, { FC } from "react";
 import Image from "next/image";
 
 import { Container } from "@/components/common";
-
 import { GoingOnTripProps } from "./types";
 
-const GoingOnTrip: FC<GoingOnTripProps> = ({
+export const GoingOnTrip: FC<GoingOnTripProps> = ({
   borderImg,
   guides,
   trip,
@@ -84,5 +83,3 @@ const GoingOnTrip: FC<GoingOnTripProps> = ({
     </div>
   </Container>
 );
-
-export default GoingOnTrip;
