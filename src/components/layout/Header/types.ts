@@ -10,12 +10,6 @@ export interface HeaderProps {
   button: Button;
 }
 
-export interface FooterProps {
-  logo: Logo;
-  anyDoubts: string;
-  contactUs: string;
-  navLinks: NavLinks[];
-}
 export interface MobileMenuProps {
   mounted: boolean;
   isMenuOpen: boolean;
