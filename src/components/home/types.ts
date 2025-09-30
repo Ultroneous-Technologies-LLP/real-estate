@@ -73,11 +73,3 @@ export interface TestimonialProps {
   travelersExperience: string;
   sliderData: SliderData[];
 }
-
-export interface HomeDataType {
-  heroSection: HeroProps;
-  goingOnTripSection: GoingOnTripProps;
-  bestDealSection: BestDealProps;
-  discoverExperiencesSection: DiscoverExperiencesProps;
-  testimonialSection: TestimonialProps;
-}
