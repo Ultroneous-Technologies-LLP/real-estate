@@ -1,8 +1,6 @@
-import Facebook from "./Facebook";
-import Instagram from "./Instagram";
-import Twitter from "./Twitter";
-import Search from "./Search";
-import Arrow from "./Arrow";
-import Cross from "./Cross";
-
-export { Facebook, Instagram, Twitter, Search, Arrow, Cross };
+export * from "./Facebook";
+export * from "./Instagram";
+export * from "./Twitter";
+export * from "./Search";
+export * from "./Arrow";
+export * from "./Cross";

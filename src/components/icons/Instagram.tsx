@@ -1,6 +1,6 @@
 import { SVGProps } from "react";
 
-const Instagram = ({
+export const Instagram = ({
   width = 23,
   height = 22,
   ...svgProps
@@ -29,5 +29,3 @@ const Instagram = ({
     <circle cx="17.8745" cy="5.08639" r="0.732875" fill="white" />
   </svg>
 );
-
-export default Instagram;

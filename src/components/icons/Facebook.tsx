@@ -1,6 +1,6 @@
 import { SVGProps } from "react";
 
-const Facebook = ({
+export const Facebook = ({
   width = 10,
   height = 20,
   ...svgProps
@@ -20,5 +20,3 @@ const Facebook = ({
     />
   </svg>
 );
-
-export default Facebook;

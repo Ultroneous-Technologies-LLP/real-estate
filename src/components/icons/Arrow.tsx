@@ -1,6 +1,6 @@
 import { SVGProps } from "react";
 
-const Arrow = ({
+export const Arrow = ({
   width = 15,
   height = 15,
   ...svgProps
@@ -20,5 +20,3 @@ const Arrow = ({
     />
   </svg>
 );
-
-export default Arrow;

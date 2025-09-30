@@ -1,6 +1,6 @@
 import { SVGProps } from "react";
 
-const Cross = ({
+export const Cross = ({
   width = 16,
   height = 16,
   ...svgProps
@@ -30,5 +30,3 @@ const Cross = ({
     />
   </svg>
 );
-
-export default Cross;
