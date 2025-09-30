@@ -1,4 +1,4 @@
-import { Image } from "@/types/common";
+import { Image } from "@/types";
 
 interface Description {
   title: string;
