@@ -1,6 +1,6 @@
 import { SVGProps } from "react";
 
-const Twitter = ({
+export const Twitter = ({
   width = 23,
   height = 18,
   ...svgProps
@@ -20,5 +20,3 @@ const Twitter = ({
     />
   </svg>
 );
-
-export default Twitter;
