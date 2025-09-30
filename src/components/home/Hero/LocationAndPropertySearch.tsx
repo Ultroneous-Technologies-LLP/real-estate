@@ -10,7 +10,7 @@ import { BREAK_POINT_Mobile } from "@/constants";
 import { HeroEnum } from "./hero";
 import { useClickOutside, useMounted, useScreenSize } from "@/hooks";
 
-const LocationAndPropertySearch = () => {
+export const LocationAndPropertySearch = () => {
   const [isLocationOpen, setIsLocationOpen] = useState(false);
   const [location, setLocation] = useState("");
   const mounted = useMounted();
@@ -144,5 +144,3 @@ const LocationAndPropertySearch = () => {
     </div>
   );
 };
-
-export default LocationAndPropertySearch;

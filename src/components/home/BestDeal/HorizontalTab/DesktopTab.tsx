@@ -1,9 +1,9 @@
 import { FC } from "react";
 
-import BestDealCard from "./Card";
-import { DesktopGridProps } from "../types";
+import { BestDealCard } from "./Card";
+import { DesktopGridProps } from "./types";
 
-const DesktopTab: FC<DesktopGridProps> = ({ items }) => (
+export const DesktopTab: FC<DesktopGridProps> = ({ items }) => (
   <div
     className="grid lg:grid-cols-3 gap-21.5 lg:gap-10 pt-8 xl:pt-11"
     role="list"
@@ -18,5 +18,3 @@ const DesktopTab: FC<DesktopGridProps> = ({ items }) => (
     ))}
   </div>
 );
-
-export default DesktopTab;

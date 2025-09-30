@@ -1,12 +1,12 @@
 import { FC } from "react";
 import { SwiperSlide } from "swiper/react";
 
-import CustomSwiper from "@/components/common/CustomSwiper";
+import { CustomSwiper } from "@/components/common/CustomSwiper";
 
-import BestDealCard from "./Card";
-import { MobileSliderProps } from "../types";
+import { BestDealCard } from "./Card";
+import { MobileSliderProps } from "./types";
 
-const MobileSlider: FC<MobileSliderProps> = ({ items }) => (
+export const MobileSlider: FC<MobileSliderProps> = ({ items }) => (
   <div role="region" aria-label="Best deals carousel" className="pt-8 xl:pt-11">
     <CustomSwiper spaceBetween={16} slidesPerView="auto">
       {items.map((item, index) => (
@@ -21,5 +21,3 @@ const MobileSlider: FC<MobileSliderProps> = ({ items }) => (
     </CustomSwiper>
   </div>
 );
-
-export default MobileSlider;

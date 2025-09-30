@@ -5,15 +5,15 @@ import { FC } from "react";
 import { BREAK_POINT_LG } from "@/constants";
 import { useMounted, useScreenSize } from "@/hooks";
 
-import { SliderData } from "../types";
-import TestimonialSlider from "./TestimonialSlider";
-import TestimonialAnimation from "./TestimonialAnimation";
+import { SliderData } from "./types";
+import { TestimonialSlider } from "./TestimonialSlider";
+import { TestimonialAnimation } from "./TestimonialAnimation";
 
 interface Props {
   data: SliderData[];
 }
 
-const TestimonialDisplay: FC<Props> = ({ data }) => {
+export const TestimonialDisplay: FC<Props> = ({ data }) => {
   const { width } = useScreenSize();
   const mounted = useMounted();
 
@@ -30,5 +30,3 @@ const TestimonialDisplay: FC<Props> = ({ data }) => {
     </div>
   );
 };
-
-export default TestimonialDisplay;

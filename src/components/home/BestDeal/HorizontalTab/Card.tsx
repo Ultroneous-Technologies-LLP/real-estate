@@ -5,9 +5,9 @@ import Image from "next/image";
 import { Arrow } from "@/components/icons";
 
 import { BestDealEnum } from "../BestDeal";
-import { BestDealCardProps } from "../types";
+import { BestDealCardProps } from "./types";
 
-const BestDealCard: FC<BestDealCardProps> = ({ image, title, link }) => (
+export const BestDealCard: FC<BestDealCardProps> = ({ image, title, link }) => (
   <div className="w-full group" role="listitem">
     <div className="relative rounded-md overflow-hidden">
       <Image
@@ -40,5 +40,3 @@ const BestDealCard: FC<BestDealCardProps> = ({ image, title, link }) => (
     </div>
   </div>
 );
-
-export default BestDealCard;
