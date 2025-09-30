@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-const useScreenSize = () => {
+export const useScreenSize = () => {
   const [width, setWidth] = useState<number>(
     typeof window !== "undefined" ? window.innerWidth : 0
   );
@@ -22,5 +22,3 @@ const useScreenSize = () => {
 
   return { width };
 };
-
-export default useScreenSize;
