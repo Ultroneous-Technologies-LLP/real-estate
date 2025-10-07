@@ -1,9 +1,8 @@
 import { FC } from "react";
 import Link from "next/link";
-import Image from "next/image";
 
-import { Container } from "@/components/common";
 import { Facebook, Instagram, Twitter } from "@/components/icons";
+import { Container, NextImageWithFallback } from "@/components/common";
 import { FACEBOOK_URL, INSTAGRAM_URL, TWITTER_URL } from "@/constants";
 
 import { FooterProps } from "./types";
@@ -23,7 +22,7 @@ export const Footer: FC<FooterProps> = ({
     <div className="max-w-171 w-full mx-auto">
       <div>
         <Link href={logo.link} aria-label={`${logo.title} homepage`}>
-          <Image
+          <NextImageWithFallback
             src={logo.src}
             width={54}
             height={54}

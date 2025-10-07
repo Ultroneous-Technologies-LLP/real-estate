@@ -1,7 +1,6 @@
 import { FC } from "react";
-import Image from "next/image";
 
-import { Container } from "@/components/common";
+import { Container, NextImageWithFallback } from "@/components/common";
 
 import { HeroProps } from "./types";
 import { LocationAndPropertySearch } from "./LocationAndPropertySearch";
@@ -36,7 +35,7 @@ export const Hero: FC<HeroProps> = ({
       <LocationAndPropertySearch />
     </div>
     <div className="mx-auto w-full max-h-75.5 md:max-h-89.5 xl:max-w-192 xl:max-h-fit">
-      <Image
+      <NextImageWithFallback
         src={image.src}
         width={768}
         height={724}

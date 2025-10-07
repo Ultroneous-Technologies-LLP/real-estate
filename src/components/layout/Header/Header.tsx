@@ -2,10 +2,9 @@
 
 import clsx from "clsx";
 import Link from "next/link";
-import Image from "next/image";
 import { FC, useEffect, useState } from "react";
 
-import { Container } from "@/components/common";
+import { Container, NextImageWithFallback } from "@/components/common";
 import { useMounted, useScreenSize } from "@/hooks";
 import { BREAK_POINT_MD } from "@/constants";
 
@@ -84,7 +83,7 @@ export const Header: FC<HeaderProps> = ({ button, logo, navLinks }) => {
             aria-label={`Go to ${logo.title} homepage`}
           >
             <Link href={logo.link}>
-              <Image
+              <NextImageWithFallback
                 src={logo.src}
                 width={38}
                 height={38}
