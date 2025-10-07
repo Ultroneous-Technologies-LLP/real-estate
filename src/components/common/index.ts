@@ -1,2 +1,3 @@
 export * from './Container'
-export * from './CustomSwiper/CustomSwiper'
+export * from './CustomSwiper'
+export * from './NextImageWithFallback'

@@ -1,8 +1,7 @@
 import clsx from "clsx";
 import React, { FC } from "react";
-import Image from "next/image";
 
-import { Container } from "@/components/common";
+import { Container, NextImageWithFallback } from "@/components/common";
 import { GoingOnTripProps } from "./types";
 
 export const GoingOnTrip: FC<GoingOnTripProps> = ({
@@ -43,7 +42,7 @@ export const GoingOnTrip: FC<GoingOnTripProps> = ({
               className="xl:max-h-22.5 xl:h-full w-6 h-6 xl:w-auto md:mx-auto"
               tabIndex={0}
             >
-              <Image
+              <NextImageWithFallback
                 src={value.src}
                 width={value.width}
                 height={value.height}
@@ -68,7 +67,7 @@ export const GoingOnTrip: FC<GoingOnTripProps> = ({
           </article>
           {index < guides.length - 1 && (
             <div className="xl:pt-5 hidden md:block" aria-hidden="true">
-              <Image
+              <NextImageWithFallback
                 src={borderImg.src}
                 alt={borderImg.alt}
                 title={value.alt}
