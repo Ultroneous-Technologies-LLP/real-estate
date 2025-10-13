@@ -2,11 +2,11 @@
 
 import clsx from "clsx";
 import Link from "next/link";
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 
-import { Container, NextImageWithFallback } from "@/components/common";
 import { useMounted, useScreenSize } from "@/hooks";
 import { BREAK_POINT_MD } from "@/constants";
+import { Container, NextImageWithFallback } from "@/components/common";
 
 import { HeaderProps } from "./types";
 import { MobileMenu } from "./MobileMenu";
@@ -15,6 +15,28 @@ export const Header: FC<HeaderProps> = ({ button, logo, navLinks }) => {
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string | null>(null);
+  const mobileMenuRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        mobileMenuRef.current &&
+        !mobileMenuRef.current.contains(event.target as Node)
+      ) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    if (isMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMenuOpen]);
 
   const mounted = useMounted();
   const { width } = useScreenSize();
@@ -78,11 +100,11 @@ export const Header: FC<HeaderProps> = ({ button, logo, navLinks }) => {
     >
       <Container as="header" className="px-4 xl:px-27.5 py-2 xl:py-8">
         <div className="flex justify-between items-center">
-          <div
-            className="flex gap-4 items-center"
-            aria-label={`Go to ${logo.title} homepage`}
-          >
-            <Link href={logo.link}>
+          <Link href={logo.link}>
+            <div
+              className="flex gap-4 items-center"
+              aria-label={`Go to ${logo.title} homepage`}
+            >
               <NextImageWithFallback
                 src={logo.src}
                 width={38}
@@ -90,11 +112,11 @@ export const Header: FC<HeaderProps> = ({ button, logo, navLinks }) => {
                 alt={logo.alt}
                 title={logo.alt}
               />
-            </Link>
-            <p className="text-police-blue text-xl/5 font-semibold font-lufga-preload hidden md:block">
-              <span>{logo.title}</span>
-            </p>
-          </div>
+              <p className="text-police-blue text-xl/5 font-semibold font-lufga-preload hidden md:block">
+                <span>{logo.title}</span>
+              </p>
+            </div>
+          </Link>
           <div className="hidden xl:block">
             <ul className="items-center flex gap-16" role="menubar">
               {navLinks.map((value) => {
@@ -129,7 +151,7 @@ export const Header: FC<HeaderProps> = ({ button, logo, navLinks }) => {
               <span>{button.title}</span>
             </button>
             <button
-              className="space-y-1 max-w-6.5 w-full block md:hidden"
+              className="space-y-1 max-w-6.5 w-full block md:hidden cursor-pointer"
               onClick={() => setIsMenuOpen(true)}
               aria-label="Open Menu"
               aria-controls="mobile-menu"
@@ -157,6 +179,7 @@ export const Header: FC<HeaderProps> = ({ button, logo, navLinks }) => {
         </div>
       </Container>
       <MobileMenu
+        ref={mobileMenuRef}
         mounted={mounted}
         isMenuOpen={isMenuOpen}
         setIsMenuOpen={setIsMenuOpen}

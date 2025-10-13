@@ -38,17 +38,21 @@ export const BestDealCard: FC<BestDealCardProps> = ({ image, title, link }) => {
         <Link
           href={link}
           aria-label={`Know more about ${title}`}
-          className="text-police-blue hover:underline py-2 px-4 border border-[#C4C4C4] text-base/8 font-semibold font-lufga-preload 
-            inline-block max-w-50 w-full rounded-lg group-hover:rounded-full tracking-widest uppercase transition-all duration-300 ease-in-out"
+          className="flex w-full"
         >
-          {BestDealEnum.KNOW_MORE}
+          <div
+            className="text-police-blue hover:underline py-2 px-4 border border-[#C4C4C4] text-base/8 font-semibold font-lufga-preload 
+          inline-block max-w-50 w-full rounded-lg group-hover:rounded-full tracking-widest uppercase transition-all duration-300 ease-in-out !no-underline"
+          >
+            {BestDealEnum.KNOW_MORE}
+          </div>
+          <button
+            aria-label={`Go to details of ${title}`}
+            className="size-14 bg-police-blue rounded-full flex justify-center items-center -ml-8 cursor-pointer"
+          >
+            <Arrow className="text-white" aria-hidden="true" />
+          </button>
         </Link>
-        <button
-          aria-label={`Go to details of ${title}`}
-          className="size-14 bg-police-blue rounded-full flex justify-center items-center -ml-8"
-        >
-          <Arrow className="text-white" aria-hidden="true" />
-        </button>
       </div>
     </div>
   );

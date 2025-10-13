@@ -5,9 +5,10 @@ import { FC, useState } from "react";
 import { Arrow } from "@/components/icons";
 import { NextImageWithFallback } from "@/components/common";
 
+import Link from "next/link";
 import { CardProps } from "./types";
 
-export const Card: FC<CardProps> = ({ title, alt, src }) => {
+export const Card: FC<CardProps> = ({ title, alt, src, link }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
@@ -35,12 +36,13 @@ export const Card: FC<CardProps> = ({ title, alt, src }) => {
         <h3 className="text-xl/7.5 xl:text-3xl/10 font-lufga-preload font-semibold max-w-45 xl:max-w-56.5 w-full break-words">
           <span>{title}</span>
         </h3>
-        <div
+        <Link
           className="size-14 border border-white flex justify-center items-center rounded-full"
           aria-hidden="true"
+          href={link}
         >
           <Arrow className="text-white" />
-        </div>
+        </Link>
       </div>
     </div>
   );
