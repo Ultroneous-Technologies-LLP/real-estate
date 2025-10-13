@@ -49,18 +49,18 @@
       },
       {
         "id": 2,
+        "links": "/#about-us",
+        "title": "ABOUT US"
+      },
+      {
+        "id": 3,
         "links": "/#best-deals",
         "title": "BEST DEALS"
       },
       {
-        "id": 3,
+        "id": 4,
         "links": "/#experiences",
         "title": "EXPERIENCES"
-      },
-      {
-        "id": 4,
-        "links": "/#about-us",
-        "title": "ABOUT US"
       }
     ]
   }

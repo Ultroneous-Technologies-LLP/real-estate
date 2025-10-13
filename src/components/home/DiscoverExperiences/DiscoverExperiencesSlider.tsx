@@ -29,7 +29,12 @@ export const DiscoverExperiencesSlider: FC<DiscoverExperiencesSliderProps> = ({
         >
           {data.map((item) => (
             <div key={item.id} role="listitem">
-              <Card title={item.title} alt={item.alt} src={item.src} />
+              <Card
+                title={item.title}
+                alt={item.alt}
+                src={item.src}
+                link={item.link}
+              />
             </div>
           ))}
         </div>
@@ -43,7 +48,12 @@ export const DiscoverExperiencesSlider: FC<DiscoverExperiencesSliderProps> = ({
               aria-label={item.title}
               className="max-w-70.5 w-full md:max-w-fit"
             >
-              <Card title={item.title} alt={item.alt} src={item.src} />
+              <Card
+                title={item.title}
+                alt={item.alt}
+                src={item.src}
+                link={item.link}
+              />
             </SwiperSlide>
           ))}
         </CustomSwiper>

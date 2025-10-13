@@ -57,28 +57,28 @@ export const Footer: FC<FooterProps> = ({
         </ul>
       </nav>
       <div
-        className="flex gap-10 justify-center pt-8 xl:pt-13.5"
+        className="flex gap-4 justify-center pt-8 xl:pt-13.5 items-center"
         role="list"
         aria-label="Social media links"
       >
         <Link
           href={FACEBOOK_URL}
           aria-label="Visit our Facebook page"
-          className="focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 rounded"
+          className="focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 rounded p-2"
         >
           <Facebook aria-hidden="true" className="text-white" />
         </Link>
         <Link
           href={TWITTER_URL}
           aria-label="Visit our Twitter page"
-          className="focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 rounded"
+          className="focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 rounded p-2"
         >
           <Twitter aria-hidden="true" className="text-white" />
         </Link>
         <Link
           href={INSTAGRAM_URL}
           aria-label="Visit our Instagram page"
-          className="focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 rounded"
+          className="focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 rounded p-2"
         >
           <Instagram aria-hidden="true" className="text-white" />
         </Link>
