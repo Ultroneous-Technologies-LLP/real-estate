@@ -7,10 +7,10 @@ import { TestimonialSliderProps } from "./types";
 
 export const TestimonialAnimation: FC<TestimonialSliderProps> = ({ data }) => (
   <div
-    role="region"
-    aria-roledescription="carousel"
     aria-label="Traveler testimonials"
+    aria-roledescription="carousel"
     className="overflow-hidden"
+    role="region"
   >
     <div className="animate-marquee pause-marquee flex w-max gap-25">
       {[...data, ...data].map((item, idx) => (

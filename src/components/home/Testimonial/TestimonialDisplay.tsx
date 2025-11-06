@@ -5,9 +5,9 @@ import { FC } from "react";
 import { BREAK_POINT_LG } from "@/constants";
 import { useMounted, useScreenSize } from "@/hooks";
 
-import { SliderData } from "./types";
-import { TestimonialSlider } from "./TestimonialSlider";
 import { TestimonialAnimation } from "./TestimonialAnimation";
+import { TestimonialSlider } from "./TestimonialSlider";
+import { SliderData } from "./types";
 
 interface Props {
   data: SliderData[];
@@ -15,10 +15,12 @@ interface Props {
 
 export const TestimonialDisplay: FC<Props> = ({ data }) => {
   const { width } = useScreenSize();
-  const mounted = useMounted();
+  const isMounted = useMounted();
 
   const isDesktop = width >= BREAK_POINT_LG;
-  if (!mounted) return null;
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <div className="pt-8 xl:pt-21.5">
