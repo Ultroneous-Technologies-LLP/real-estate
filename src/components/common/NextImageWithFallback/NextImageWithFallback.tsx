@@ -15,14 +15,15 @@ export const NextImageWithFallback: FC<NextImageWithFallbackProps> = ({
 }) => {
   const [imgSrc, setImgSrc] = useState<null | string>(null);
 
-  const handleError = () => {
-    //EARLY RETURN
-    if (!imgSrc) return;
+  const handleError = (): void => {
+    if (!imgSrc) {
+      return;
+    }
 
     if (imgSrc !== (fallbackSrc || DEFAULT_FALLBACK)) {
       setImgSrc(fallbackSrc || DEFAULT_FALLBACK);
     }
   };
 
-  return <Image {...props} src={imgSrc ? imgSrc : src} alt={alt} onError={handleError} />;
+  return <Image alt={alt} onError={handleError} src={imgSrc ? imgSrc : src} {...props} />;
 };
