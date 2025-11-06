@@ -1,19 +1,17 @@
 "use client";
 
 import { FC } from "react";
-
-import { CustomSwiperProps } from "./types";
 import { Swiper } from "swiper/react";
 
-export const CustomSwiper: FC<CustomSwiperProps> = ({ className = "", children, ...rest }) => {
-  return (
-    <Swiper
-      className={`w-full overflow-hidden [&_.swiper-slide]:shrink-0 [&_.swiper-wrapper]:flex [&_.swiper-wrapper]:items-stretch [&_.swiper-wrapper]:transition-transform 
+import { CustomSwiperProps } from "./types";
+
+export const CustomSwiper: FC<CustomSwiperProps> = ({ className = "", children, ...rest }) => (
+  <Swiper
+    aria-live="polite"
+    className={`w-full overflow-hidden [&_.swiper-slide]:shrink-0 [&_.swiper-wrapper]:flex [&_.swiper-wrapper]:items-stretch [&_.swiper-wrapper]:transition-transform 
         [&_.swiper-wrapper]:duration-300 [&_.swiper-wrapper]:ease-in-out ${className}`}
-      aria-live="polite"
-      {...rest}
-    >
-      {children}
-    </Swiper>
-  );
-};
+    {...rest}
+  >
+    {children}
+  </Swiper>
+);
