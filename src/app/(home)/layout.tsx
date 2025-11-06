@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+import { FC, PropsWithChildren } from "react";
 
-import data from "@/content/layout.json";
-import { lufga, lufgaPreload } from "@/constants";
 import { Footer, Header } from "@/components/layout";
+import { lufga, lufgaPreload } from "@/constants";
+import data from "@/content/layout.json";
 
 import "../../style/globals.css";
-import { LayoutDataType } from "./types";
+import { LayoutProps } from "./types";
 
 export const metadata: Metadata = {
   title: "Real Estate Website Landing Page – Property, Housing & Modern Realtor UI",
@@ -57,15 +58,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  const { footer, header }: LayoutDataType = data;
+const RootLayout: FC<PropsWithChildren> = ({ children }) => {
+  const { footer, header }: LayoutProps = data;
 
   return (
-    <html lang="en" className="scroll-smooth">
+    <html className="scroll-smooth" lang="en">
       <body className={`${lufgaPreload.variable} ${lufga.variable} antialiased`}>
         <Header {...header} />
         {children}
@@ -73,4 +70,6 @@ export default function RootLayout({
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;
