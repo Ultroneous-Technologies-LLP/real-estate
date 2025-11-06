@@ -10,9 +10,7 @@ import { useMounted, useScreenSize } from "@/hooks";
 import { Card } from "./Card";
 import { DiscoverExperiencesSliderProps } from "./types";
 
-export const DiscoverExperiencesSlider: FC<DiscoverExperiencesSliderProps> = ({
-  data,
-}) => {
+export const DiscoverExperiencesSlider: FC<DiscoverExperiencesSliderProps> = ({ data }) => {
   const mounted = useMounted();
   const { width } = useScreenSize();
   const isDesktop = width >= BREAK_POINT_LG;
@@ -29,12 +27,7 @@ export const DiscoverExperiencesSlider: FC<DiscoverExperiencesSliderProps> = ({
         >
           {data.map((item) => (
             <div key={item.id} role="listitem">
-              <Card
-                title={item.title}
-                alt={item.alt}
-                src={item.src}
-                link={item.link}
-              />
+              <Card title={item.title} alt={item.alt} src={item.src} link={item.link} />
             </div>
           ))}
         </div>
@@ -46,14 +39,9 @@ export const DiscoverExperiencesSlider: FC<DiscoverExperiencesSliderProps> = ({
               role="group"
               aria-roledescription="slide"
               aria-label={item.title}
-              className="max-w-70.5 w-full md:max-w-fit"
+              className="w-full max-w-70.5 md:max-w-fit"
             >
-              <Card
-                title={item.title}
-                alt={item.alt}
-                src={item.src}
-                link={item.link}
-              />
+              <Card title={item.title} alt={item.alt} src={item.src} link={item.link} />
             </SwiperSlide>
           ))}
         </CustomSwiper>

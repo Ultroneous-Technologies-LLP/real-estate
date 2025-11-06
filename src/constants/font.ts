@@ -39,4 +39,4 @@ export const lufgaPreload = localFont({
   variable: "--font-lufga-preload",
   display: "swap",
   preload: true,
-})
+});

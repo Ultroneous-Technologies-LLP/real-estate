@@ -8,8 +8,7 @@ import "../../style/globals.css";
 import { LayoutDataType } from "./types";
 
 export const metadata: Metadata = {
-  title:
-    "Real Estate Website Landing Page – Property, Housing & Modern Realtor UI",
+  title: "Real Estate Website Landing Page – Property, Housing & Modern Realtor UI",
   description:
     "Elegant real estate website landing page design. Perfect for property listings, housing agencies, and realtors showcasing modern properties and apartments.",
   keywords: [
@@ -67,9 +66,7 @@ export default function RootLayout({
 
   return (
     <html lang="en" className="scroll-smooth">
-      <body
-        className={`${lufgaPreload.variable} ${lufga.variable} antialiased`}
-      >
+      <body className={`${lufgaPreload.variable} ${lufga.variable} antialiased`}>
         <Header {...header} />
         {children}
         <Footer {...footer} />

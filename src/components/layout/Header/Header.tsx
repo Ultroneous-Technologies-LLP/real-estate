@@ -19,10 +19,7 @@ export const Header: FC<HeaderProps> = ({ button, logo, navLinks }) => {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (
-        mobileMenuRef.current &&
-        !mobileMenuRef.current.contains(event.target as Node)
-      ) {
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
         setIsMenuOpen(false);
       }
     };
@@ -63,16 +60,11 @@ export const Header: FC<HeaderProps> = ({ button, logo, navLinks }) => {
       let currentSection: string | null = null;
 
       navLinks.forEach((link) => {
-        const selector = link.links.startsWith("/")
-          ? link.links.slice(1)
-          : link.links;
+        const selector = link.links.startsWith("/") ? link.links.slice(1) : link.links;
         const section = document.querySelector(selector);
         if (section) {
           const { offsetTop, offsetHeight } = section as HTMLElement;
-          if (
-            scrollPosition >= offsetTop &&
-            scrollPosition < offsetTop + offsetHeight
-          ) {
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
             currentSection = link.links;
           }
         }
@@ -89,22 +81,19 @@ export const Header: FC<HeaderProps> = ({ button, logo, navLinks }) => {
   return (
     <nav
       className={clsx(
-        "w-full z-50 fixed top-0 left-1/2 -translate-x-1/2 mx-auto transition-colors duration-700 ease-in-out",
+        "fixed top-0 left-1/2 z-50 mx-auto w-full -translate-x-1/2 transition-colors duration-700 ease-in-out",
         {
           "bg-transparent": !scrolled,
-          "bg-white/50 backdrop-blur-[22px] shadow-md": scrolled,
+          "bg-white/50 shadow-md backdrop-blur-[22px]": scrolled,
         }
       )}
       role="navigation"
       aria-label="Main Navigation"
     >
-      <Container as="header" className="px-4 xl:px-27.5 py-2 xl:py-8">
-        <div className="flex justify-between items-center">
+      <Container as="header" className="px-4 py-2 xl:px-27.5 xl:py-8">
+        <div className="flex items-center justify-between">
           <Link href={logo.link}>
-            <div
-              className="flex gap-4 items-center"
-              aria-label={`Go to ${logo.title} homepage`}
-            >
+            <div className="flex items-center gap-4" aria-label={`Go to ${logo.title} homepage`}>
               <NextImageWithFallback
                 src={logo.src}
                 width={38}
@@ -112,13 +101,13 @@ export const Header: FC<HeaderProps> = ({ button, logo, navLinks }) => {
                 alt={logo.alt}
                 title={logo.alt}
               />
-              <p className="text-police-blue text-xl/5 font-semibold font-lufga-preload hidden md:block">
+              <p className="text-police-blue font-lufga-preload hidden text-xl/5 font-semibold md:block">
                 <span>{logo.title}</span>
               </p>
             </div>
           </Link>
           <div className="hidden xl:block">
-            <ul className="items-center flex gap-16" role="menubar">
+            <ul className="flex items-center gap-16" role="menubar">
               {navLinks.map((value) => {
                 const isActive = activeSection === value.links;
                 const showUnderline =
@@ -130,46 +119,46 @@ export const Header: FC<HeaderProps> = ({ button, logo, navLinks }) => {
                   <li key={value.id} role="menuitem" className="relative">
                     <Link
                       href={value.links}
-                      className="text-base/9 font-medium font-lufga-preload text-police-blue transition-colors duration-300"
+                      className="font-lufga-preload text-police-blue text-base/9 font-medium transition-colors duration-300"
                     >
                       <span>{value.title}</span>
                     </Link>
                     {showUnderline && (
-                      <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-police-blue rounded-full" />
+                      <span className="bg-police-blue absolute -bottom-1 left-1/2 h-0.5 w-8 -translate-x-1/2 rounded-full" />
                     )}
                   </li>
                 );
               })}
             </ul>
           </div>
-          <div className="flex gap-3 items-center max-w-36 md:max-w-27.5 xl:max-w-37.5 w-full">
+          <div className="flex w-full max-w-36 items-center gap-3 md:max-w-27.5 xl:max-w-37.5">
             <button
-              className="cursor-pointer py-3 px-4 md:px-5 xl:py-1.5 xl:px-10 rounded-[10px] bg-police-blue text-cultured text-base leading-normal 
-              xl:leading-9 font-lufga-preload font-semibold uppercase w-full hover:bg-cadet-grey transition-colors duration-500 ease-in-out"
+              className="bg-police-blue text-cultured font-lufga-preload hover:bg-cadet-grey w-full cursor-pointer rounded-[10px] px-4 py-3 text-base leading-normal 
+              font-semibold uppercase transition-colors duration-500 ease-in-out md:px-5 xl:px-10 xl:py-1.5 xl:leading-9"
               type="button"
             >
               <span>{button.title}</span>
             </button>
             <button
-              className="space-y-1 max-w-6.5 w-full block md:hidden cursor-pointer"
+              className="block w-full max-w-6.5 cursor-pointer space-y-1 md:hidden"
               onClick={() => setIsMenuOpen(true)}
               aria-label="Open Menu"
               aria-controls="mobile-menu"
               aria-expanded={mounted ? isMenuOpen : undefined}
             >
-              <span className="w-[14.4px] h-[2.7px] bg-police-blue block rounded-full mr-0 ml-auto" />
-              <span className="w-[14.4px] h-[2.7px] bg-police-blue block rounded-full mx-auto" />
-              <span className="w-[14.4px] h-[2.7px] bg-police-blue block rounded-full mr-auto ml-0" />
+              <span className="bg-police-blue mr-0 ml-auto block h-[2.7px] w-[14.4px] rounded-full" />
+              <span className="bg-police-blue mx-auto block h-[2.7px] w-[14.4px] rounded-full" />
+              <span className="bg-police-blue mr-auto ml-0 block h-[2.7px] w-[14.4px] rounded-full" />
             </button>
           </div>
         </div>
-        <div className="hidden md:flex xl:hidden mt-4 justify-center">
-          <ul className="items-center flex gap-16">
+        <div className="mt-4 hidden justify-center md:flex xl:hidden">
+          <ul className="flex items-center gap-16">
             {navLinks.map((value) => (
               <li key={value.id}>
                 <Link
                   href={value.links}
-                  className="text-base/9 font-medium font-lufga-preload text-police-blue"
+                  className="font-lufga-preload text-police-blue text-base/9 font-medium"
                 >
                   <span>{value.title}</span>
                 </Link>

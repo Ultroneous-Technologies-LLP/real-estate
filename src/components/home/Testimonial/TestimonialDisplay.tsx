@@ -22,11 +22,7 @@ export const TestimonialDisplay: FC<Props> = ({ data }) => {
 
   return (
     <div className="pt-8 xl:pt-21.5">
-      {isDesktop ? (
-        <TestimonialAnimation data={data} />
-      ) : (
-        <TestimonialSlider data={data} />
-      )}
+      {isDesktop ? <TestimonialAnimation data={data} /> : <TestimonialSlider data={data} />}
     </div>
   );
 };

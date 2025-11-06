@@ -1,12 +1,6 @@
 import data from "@/content/home-page.json";
 
-import {
-  BestDeal,
-  DiscoverExperiences,
-  GoingOnTrip,
-  Hero,
-  Testimonial,
-} from "@/components/home";
+import { BestDeal, DiscoverExperiences, GoingOnTrip, Hero, Testimonial } from "@/components/home";
 
 import { HomeDataType } from "./types";
 

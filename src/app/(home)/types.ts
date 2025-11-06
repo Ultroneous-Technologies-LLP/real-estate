@@ -6,7 +6,6 @@ import { TestimonialProps } from "@/components/home/Testimonial/types";
 import { FooterProps } from "@/components/layout/Footer/types";
 import { HeaderProps } from "@/components/layout/Header/types";
 
-
 // Layouts Type
 export interface LayoutDataType {
   header: HeaderProps;

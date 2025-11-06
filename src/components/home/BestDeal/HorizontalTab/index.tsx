@@ -12,10 +12,7 @@ import { DesktopTab } from "./DesktopTab";
 import { HorizontalTabProps } from "./types";
 import { MobileSlider } from "./MobileSlider";
 
-export const HorizontalTab: FC<HorizontalTabProps> = ({
-  tabData,
-  currentCity,
-}) => {
+export const HorizontalTab: FC<HorizontalTabProps> = ({ tabData, currentCity }) => {
   const [activeTab, setActiveTab] = useState<TabKey>("Flat");
   const [underlineStyle, setUnderlineStyle] = useState({ left: 0, width: 0 });
   const tabsRef = useRef<HTMLDivElement>(null);
@@ -42,10 +39,10 @@ export const HorizontalTab: FC<HorizontalTabProps> = ({
   const currentItems = tabData[currentCity][activeTab];
 
   return (
-    <div className="flex flex-col relative pt-8 xl:pt-20">
+    <div className="relative flex flex-col pt-8 xl:pt-20">
       <div
         ref={tabsRef}
-        className="flex gap-2 xl:gap-32 justify-center relative pr-4 md:pr-6 xl:pr-0"
+        className="relative flex justify-center gap-2 pr-4 md:pr-6 xl:gap-32 xl:pr-0"
         role="tablist"
         aria-label="Property categories"
       >
@@ -58,7 +55,7 @@ export const HorizontalTab: FC<HorizontalTabProps> = ({
             id={`tab-${tab}`}
             onClick={() => setActiveTab(tab)}
             className={clsx(
-              "text-xl/7.5 xl:text-3xl/6.5 font-lufga-preload transition-colors duration-700 ease-in-out cursor-pointer p-4 md:px-10 md:py-4 xl:px-0 xl:pt-0 xl:pb-4",
+              "font-lufga-preload cursor-pointer p-4 text-xl/7.5 transition-colors duration-700 ease-in-out md:px-10 md:py-4 xl:px-0 xl:pt-0 xl:pb-4 xl:text-3xl/6.5",
               {
                 "text-[#3F5260]": activeTab === tab,
                 "text-cadet-blue-crayola": activeTab !== tab,
@@ -69,7 +66,7 @@ export const HorizontalTab: FC<HorizontalTabProps> = ({
           </button>
         ))}
         <span
-          className="absolute bottom-0 h-1 bg-cadet-blue-crayola transition-all duration-300 ease-in-out"
+          className="bg-cadet-blue-crayola absolute bottom-0 h-1 transition-all duration-300 ease-in-out"
           style={{
             left: underlineStyle.left,
             width: underlineStyle.width,
@@ -77,16 +74,8 @@ export const HorizontalTab: FC<HorizontalTabProps> = ({
         />
       </div>
 
-      <div
-        id={`tabpanel-${activeTab}`}
-        role="tabpanel"
-        aria-labelledby={`tab-${activeTab}`}
-      >
-        {isMobile ? (
-          <MobileSlider items={currentItems} />
-        ) : (
-          <DesktopTab items={currentItems} />
-        )}
+      <div id={`tabpanel-${activeTab}`} role="tabpanel" aria-labelledby={`tab-${activeTab}`}>
+        {isMobile ? <MobileSlider items={currentItems} /> : <DesktopTab items={currentItems} />}
       </div>
     </div>
   );

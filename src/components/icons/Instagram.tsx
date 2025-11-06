@@ -1,10 +1,6 @@
 import { SVGProps } from "react";
 
-export const Instagram = ({
-  width = 23,
-  height = 22,
-  ...svgProps
-}: SVGProps<SVGSVGElement>) => (
+export const Instagram = ({ width = 23, height = 22, ...svgProps }: SVGProps<SVGSVGElement>) => (
   <svg
     viewBox="0 0 23 22"
     fill="none"

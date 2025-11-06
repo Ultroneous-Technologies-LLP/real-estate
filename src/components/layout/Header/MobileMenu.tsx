@@ -19,32 +19,32 @@ export const MobileMenu = forwardRef<HTMLDivElement, MobileMenuProps>(
         aria-label="Mobile Navigation Menu"
         aria-hidden={mounted ? !isMenuOpen : true}
         className={clsx(
-          "fixed top-0 right-0 h-screen w-72 bg-police-blue rounded-l-4xl transform transition-transform duration-500 ease-in-out z-50 pt-18 pb-12 px-8",
+          "bg-police-blue fixed top-0 right-0 z-50 h-screen w-72 transform rounded-l-4xl px-8 pt-18 pb-12 transition-transform duration-500 ease-in-out",
           {
             "translate-x-0": isMenuOpen,
             "translate-x-full": !isMenuOpen,
           }
         )}
       >
-        <div className="flex justify-end items-center">
+        <div className="flex items-center justify-end">
           <button
             onClick={() => setIsMenuOpen(false)}
             aria-label="Close Menu"
             className="text-2xl font-bold text-white"
             tabIndex={mounted ? (isMenuOpen ? 0 : -1) : -1}
           >
-            <Cross className="text-[#828F98] cursor-pointer" />
+            <Cross className="cursor-pointer text-[#828F98]" />
           </button>
         </div>
 
-        <div className="flex flex-col justify-between h-11/12">
-          <ul className="flex flex-col gap-6 mt-16">
+        <div className="flex h-11/12 flex-col justify-between">
+          <ul className="mt-16 flex flex-col gap-6">
             {navLinks.map((value) => (
               <li key={value.id} role="none" className="space-y-6">
                 <Link
                   href={value.links}
                   role="menuitem"
-                  className="text-base/6 font-medium font-lufga-preload text-white tracking-widest"
+                  className="font-lufga-preload text-base/6 font-medium tracking-widest text-white"
                   onClick={() => setIsMenuOpen(false)}
                   tabIndex={mounted ? (isMenuOpen ? 0 : -1) : -1}
                 >
@@ -53,15 +53,11 @@ export const MobileMenu = forwardRef<HTMLDivElement, MobileMenuProps>(
               </li>
             ))}
           </ul>
-          <div
-            className="flex gap-10 justify-start"
-            role="list"
-            aria-label="Social media links"
-          >
+          <div className="flex justify-start gap-10" role="list" aria-label="Social media links">
             <Link
               href={FACEBOOK_URL}
               aria-label="Visit our Facebook page"
-              className="focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 rounded"
+              className="rounded focus:ring-2 focus:ring-white focus:ring-offset-2 focus:outline-none"
               tabIndex={mounted ? (isMenuOpen ? 0 : -1) : -1}
             >
               <Facebook aria-hidden="true" className="text-white" />
@@ -69,7 +65,7 @@ export const MobileMenu = forwardRef<HTMLDivElement, MobileMenuProps>(
             <Link
               href={TWITTER_URL}
               aria-label="Visit our Twitter page"
-              className="focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 rounded"
+              className="rounded focus:ring-2 focus:ring-white focus:ring-offset-2 focus:outline-none"
               tabIndex={mounted ? (isMenuOpen ? 0 : -1) : -1}
             >
               <Twitter aria-hidden="true" className="text-white" />
@@ -77,7 +73,7 @@ export const MobileMenu = forwardRef<HTMLDivElement, MobileMenuProps>(
             <Link
               href={INSTAGRAM_URL}
               aria-label="Visit our Instagram page"
-              className="focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 rounded"
+              className="rounded focus:ring-2 focus:ring-white focus:ring-offset-2 focus:outline-none"
               tabIndex={mounted ? (isMenuOpen ? 0 : -1) : -1}
             >
               <Instagram aria-hidden="true" className="text-white" />

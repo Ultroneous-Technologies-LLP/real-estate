@@ -37,25 +37,25 @@ export const LocationAndPropertySearch = () => {
 
   return (
     <div
-      className={`max-w-89.5 w-full left-1/2 -translate-x-1/2 absolute bg-white/70 backdrop-blur-[2px] rounded-2xl p-6 mt-6 flex flex-col justify-between
-      md:backdrop-blur-none md:max-w-180 md:flex-row
-      xl:left-[unset] xl:-translate-x-[unset] xl:static xl:bg-white xl:shadow-[0_4px_4px_0_#D4D4D440] xl:px-6 xl:mt-18.5 xl:py-4.5`}
+      className={`absolute left-1/2 mt-6 flex w-full max-w-89.5 -translate-x-1/2 flex-col justify-between rounded-2xl bg-white/70 p-6 backdrop-blur-[2px]
+      md:max-w-180 md:flex-row md:backdrop-blur-none
+      xl:static xl:left-[unset] xl:mt-18.5 xl:-translate-x-[unset] xl:bg-white xl:px-6 xl:py-4.5 xl:shadow-[0_4px_4px_0_#D4D4D440]`}
     >
-      <div className="flex flex-col md:flex-row md:max-w-130 xl:max-w-110 w-full">
+      <div className="flex w-full flex-col md:max-w-130 md:flex-row xl:max-w-110">
         <div
           ref={dropdownRef}
           role="combobox"
           aria-expanded={isLocationOpen}
           aria-controls="location-listbox"
           aria-haspopup="listbox"
-          className="md:max-w-65.5 xl:max-w-46 w-full md:pr-7.5 md:border-r md:border-cadet-blue-crayola pt-1 relative mb-4 md:mb-0"
+          className="md:border-cadet-blue-crayola relative mb-4 w-full pt-1 md:mb-0 md:max-w-65.5 md:border-r md:pr-7.5 xl:max-w-46"
         >
           <div
-            className="flex gap-5 items-center pb-2.5"
+            className="flex items-center gap-5 pb-2.5"
             onClick={() => setIsLocationOpen(!isLocationOpen)}
           >
             <label
-              className="text-lg/4.5 font-lufga-preload text-police-blue block cursor-pointer"
+              className="font-lufga-preload text-police-blue block cursor-pointer text-lg/4.5"
               htmlFor="location"
             >
               {HeroEnum.LOCATION}
@@ -75,7 +75,7 @@ export const LocationAndPropertySearch = () => {
           </div>
           <input
             id="location"
-            className="text-sm/3.5 max-w-39 w-full placeholder:text-[#A7B0B7] focus-within:outline-0"
+            className="w-full max-w-39 text-sm/3.5 placeholder:text-[#A7B0B7] focus-within:outline-0"
             placeholder={HeroEnum.WERE_ARE_YOU_GOING}
             value={location || ""}
             onChange={handleInputChange}
@@ -89,7 +89,7 @@ export const LocationAndPropertySearch = () => {
             <ul
               id="location-listbox"
               role="listbox"
-              className={`absolute z-10 mt-3 bg-white shadow-md rounded-lg w-full border border-gray-200 ${
+              className={`absolute z-10 mt-3 w-full rounded-lg border border-gray-200 bg-white shadow-md ${
                 isLocationOpen ? "block" : "hidden"
               }`}
             >
@@ -99,23 +99,21 @@ export const LocationAndPropertySearch = () => {
                     key={loc}
                     role="option"
                     aria-selected={location === loc}
-                    className="px-3 py-2 cursor-pointer hover:bg-gray-100 hover:rounded-lg"
+                    className="cursor-pointer px-3 py-2 hover:rounded-lg hover:bg-gray-100"
                     onClick={() => handleOnClick(loc)}
                   >
                     {loc}
                   </li>
                 ))
               ) : (
-                <li className="px-3 py-2 text-gray-500 text-xs">
-                  {HeroEnum.NO_MATCHING}
-                </li>
+                <li className="px-3 py-2 text-xs text-gray-500">{HeroEnum.NO_MATCHING}</li>
               )}
             </ul>
           )}
         </div>
-        <div className="md:pl-7.5 max-w-65 w-full pt-1">
+        <div className="w-full max-w-65 pt-1 md:pl-7.5">
           <label
-            className="text-lg/4.5 font-lufga-preload text-police-blue block pb-2.5"
+            className="font-lufga-preload text-police-blue block pb-2.5 text-lg/4.5"
             htmlFor="propertyType"
           >
             {HeroEnum.PROPERTY_TYPE}
@@ -123,20 +121,20 @@ export const LocationAndPropertySearch = () => {
           <input
             id="propertyType"
             placeholder="Search For Flat, Bungalow or Villa"
-            className="text-sm/3.5 w-full placeholder:text-[#A7B0B7] focus-within:outline-0"
+            className="w-full text-sm/3.5 placeholder:text-[#A7B0B7] focus-within:outline-0"
             defaultValue=""
             autoComplete="off"
           />
         </div>
       </div>
-      <div className="hidden md:flex rounded-full justify-center items-center bg-police-blue size-14 cursor-pointer group hover:bg-cadet-grey duration-300 ease-in-out">
-        <Search className="text-white group-hover:text-cultured" />
+      <div className="bg-police-blue group hover:bg-cadet-grey hidden size-14 cursor-pointer items-center justify-center rounded-full duration-300 ease-in-out md:flex">
+        <Search className="group-hover:text-cultured text-white" />
       </div>
       {isMobile && (
         <button
           type="button"
           aria-label="search-button"
-          className="rounded-xl bg-police-blue py-3 px-4 font-lufga-preload font-semibold text-base/normal tracking-widest text-cultured w-fit mt-4"
+          className="bg-police-blue font-lufga-preload text-cultured mt-4 w-fit rounded-xl px-4 py-3 text-base/normal font-semibold tracking-widest"
         >
           {HeroEnum.BUTTONTEXT}
         </button>

@@ -13,42 +13,38 @@ export const BestDealCard: FC<BestDealCardProps> = ({ image, title, link }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
-    <div className="w-full group" role="listitem">
-      <div className="relative rounded-md overflow-hidden">
+    <div className="group w-full" role="listitem">
+      <div className="relative overflow-hidden rounded-md">
         {/* Skeleton loader */}
         {isLoading && (
-          <div className="absolute inset-0 rounded-md bg-gray-200 dark:bg-gray-700 animate-pulse" />
+          <div className="absolute inset-0 animate-pulse rounded-md bg-gray-200 dark:bg-gray-700" />
         )}
         <NextImageWithFallback
           src={image}
           width={349}
           height={363}
           alt={title}
-          className={`object-cover w-full h-full transition-transform duration-300 group-hover:scale-105 rounded-md ${
+          className={`h-full w-full rounded-md object-cover transition-transform duration-300 group-hover:scale-105 ${
             isLoading ? "opacity-0" : "opacity-100"
           }`}
           onLoad={() => setIsLoading(false)}
         />
-        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-colors duration-500 rounded-lg" />
+        <div className="absolute inset-0 rounded-lg bg-black/0 transition-colors duration-500 group-hover:bg-black/50" />
       </div>
-      <h3 className="pt-4 text-base/6 xl:text-xl/6.5 font-lufga-preload text-police-blue">
+      <h3 className="font-lufga-preload text-police-blue pt-4 text-base/6 xl:text-xl/6.5">
         {title}
       </h3>
-      <div className="flex items-center mt-2 xl:mt-6">
-        <Link
-          href={link}
-          aria-label={`Know more about ${title}`}
-          className="flex w-full"
-        >
+      <div className="mt-2 flex items-center xl:mt-6">
+        <Link href={link} aria-label={`Know more about ${title}`} className="flex w-full">
           <div
-            className="text-police-blue hover:underline py-2 px-4 border border-[#C4C4C4] text-base/8 font-semibold font-lufga-preload 
-          inline-block max-w-50 w-full rounded-lg group-hover:rounded-full tracking-widest uppercase transition-all duration-300 ease-in-out !no-underline"
+            className="text-police-blue font-lufga-preload inline-block w-full max-w-50 rounded-lg border border-[#C4C4C4] px-4 
+          py-2 text-base/8 font-semibold tracking-widest uppercase !no-underline transition-all duration-300 ease-in-out group-hover:rounded-full hover:underline"
           >
             {BestDealEnum.KNOW_MORE}
           </div>
           <button
             aria-label={`Go to details of ${title}`}
-            className="size-14 bg-police-blue rounded-full flex justify-center items-center -ml-8 cursor-pointer"
+            className="bg-police-blue -ml-8 flex size-14 cursor-pointer items-center justify-center rounded-full"
           >
             <Arrow className="text-white" aria-hidden="true" />
           </button>

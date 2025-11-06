@@ -10,12 +10,8 @@ export const MobileSlider: FC<MobileSliderProps> = ({ items }) => (
   <div role="region" aria-label="Best deals carousel" className="pt-8 xl:pt-11">
     <CustomSwiper spaceBetween={16} slidesPerView="auto">
       {items.map((item, index) => (
-        <SwiperSlide key={index} className="max-w-70.5 w-full md:max-w-87.5">
-          <BestDealCard
-            image={item.image}
-            title={item.title}
-            link={item.link}
-          />
+        <SwiperSlide key={index} className="w-full max-w-70.5 md:max-w-87.5">
+          <BestDealCard image={item.image} title={item.title} link={item.link} />
         </SwiperSlide>
       ))}
     </CustomSwiper>
