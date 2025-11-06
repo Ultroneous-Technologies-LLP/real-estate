@@ -1,26 +1,29 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import { LOCATION_OPTIONS } from "@/constants";
 
 interface BestDealItem {
   image: string;
-  title: string;
   link: string;
+  title: string;
 }
 
 export interface TabData {
-  Flat: BestDealItem[];
   Bungalow: BestDealItem[];
+  Flat: BestDealItem[];
   Villa: BestDealItem[];
 }
+
 export interface DropdownProps {
   selectedCity: string;
   setSelectedCity: (city: string) => void;
 }
+
 export interface BestDealProps {
-  title: string;
   description: string;
   tabData: Record<string, TabData>;
+  title: string;
 }
 
-export type TabKey = keyof TabData; // "Flat" | "Bungalow" | "Villa"
+export type TabKey = keyof TabData;
 
 export type LocationOption = (typeof LOCATION_OPTIONS)[number];

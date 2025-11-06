@@ -1,17 +1,17 @@
 export interface CardProps {
-  src: string;
   alt: string;
+  link: string;
+  src: string;
   title: string;
   id?: number;
-  link: string;
 }
 
 interface DiscoverExperiencesSlider {
-  id: number;
-  src: string;
   alt: string;
-  title: string;
+  id: number;
   link: string;
+  src: string;
+  title: string;
 }
 
 export interface DiscoverExperiencesSliderProps {
@@ -19,7 +19,7 @@ export interface DiscoverExperiencesSliderProps {
 }
 
 export interface DiscoverExperiencesProps {
-  title: string;
   description: string;
   discoverExperiencesSlider: DiscoverExperiencesSlider[];
+  title: string;
 }
