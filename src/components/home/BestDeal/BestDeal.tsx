@@ -13,10 +13,10 @@ export const BestDeal: FC<BestDealProps> = ({ description, tabData, title }) => 
 
   return (
     <Container
+      aria-labelledby="best-deals-title"
       className="pt-20 pl-4 md:pl-6 xl:px-27 xl:pt-39"
       id="best-deals"
       role="region"
-      aria-labelledby="best-deals-title"
     >
       <div className="relative flex flex-col items-center justify-center xl:flex-row">
         <h2
@@ -30,7 +30,7 @@ export const BestDeal: FC<BestDealProps> = ({ description, tabData, title }) => 
       <p className="font-lufga-preload text-cadet-blue-crayola mx-auto w-full max-w-75.5 pt-1 text-center text-xs/4.5 md:text-sm/5 xl:max-w-124.5 xl:pt-4 xl:text-2xl/6.5">
         {description}
       </p>
-      <HorizontalTab tabData={tabData} currentCity={selectedCity} />
+      <HorizontalTab currentCity={selectedCity} tabData={tabData} />
     </Container>
   );
 };
