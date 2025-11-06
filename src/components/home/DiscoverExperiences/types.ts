@@ -3,7 +3,7 @@ export interface CardProps {
   alt: string;
   title: string;
   id?: number;
-  link:string
+  link: string;
 }
 
 interface DiscoverExperiencesSlider {
@@ -11,7 +11,7 @@ interface DiscoverExperiencesSlider {
   src: string;
   alt: string;
   title: string;
-  link:string
+  link: string;
 }
 
 export interface DiscoverExperiencesSliderProps {

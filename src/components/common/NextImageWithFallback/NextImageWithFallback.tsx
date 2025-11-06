@@ -24,12 +24,5 @@ export const NextImageWithFallback: FC<NextImageWithFallbackProps> = ({
     }
   };
 
-  return (
-    <Image
-      {...props}
-      src={imgSrc ? imgSrc : src}
-      alt={alt}
-      onError={handleError}
-    />
-  );
+  return <Image {...props} src={imgSrc ? imgSrc : src} alt={alt} onError={handleError} />;
 };

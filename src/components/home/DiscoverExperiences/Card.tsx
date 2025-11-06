@@ -13,31 +13,31 @@ export const Card: FC<CardProps> = ({ title, alt, src, link }) => {
 
   return (
     <div
-      className="relative w-full group"
+      className="group relative w-full"
       role="group"
       aria-label={`Experience card: ${title}`}
       tabIndex={0}
     >
       {isLoading && (
-        <div className="absolute inset-0 animate-pulse bg-gray-200 dark:bg-gray-700 rounded-md" />
+        <div className="absolute inset-0 animate-pulse rounded-md bg-gray-200 dark:bg-gray-700" />
       )}
       <NextImageWithFallback
         src={src}
         width={349}
         height={517}
         alt={alt || title}
-        className={`object-cover rounded-md transition-opacity duration-700 ${
+        className={`rounded-md object-cover transition-opacity duration-700 ${
           isLoading ? "opacity-0" : "opacity-100"
         }`}
         onLoad={() => setIsLoading(false)}
       />
-      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-colors duration-500 rounded-lg xl:max-w-87.5" />
-      <div className="flex gap-6.5 items-center absolute bottom-6 w-fit left-4 text-white transition-opacity duration-500">
-        <h3 className="text-xl/7.5 xl:text-3xl/10 font-lufga-preload font-semibold max-w-45 xl:max-w-56.5 w-full break-words">
+      <div className="absolute inset-0 rounded-lg bg-black/0 transition-colors duration-500 group-hover:bg-black/50 xl:max-w-87.5" />
+      <div className="absolute bottom-6 left-4 flex w-fit items-center gap-6.5 text-white transition-opacity duration-500">
+        <h3 className="font-lufga-preload w-full max-w-45 text-xl/7.5 font-semibold break-words xl:max-w-56.5 xl:text-3xl/10">
           <span>{title}</span>
         </h3>
         <Link
-          className="size-14 border border-white flex justify-center items-center rounded-full"
+          className="flex size-14 items-center justify-center rounded-full border border-white"
           aria-hidden="true"
           href={link}
         >

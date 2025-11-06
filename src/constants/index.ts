@@ -1,2 +1,2 @@
-export * from './font'
-export * from './common'
+export * from "./font";
+export * from "./common";

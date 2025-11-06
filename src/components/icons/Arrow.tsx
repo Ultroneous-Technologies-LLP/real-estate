@@ -1,10 +1,6 @@
 import { SVGProps } from "react";
 
-export const Arrow = ({
-  width = 15,
-  height = 15,
-  ...svgProps
-}: SVGProps<SVGSVGElement>) => (
+export const Arrow = ({ width = 15, height = 15, ...svgProps }: SVGProps<SVGSVGElement>) => (
   <svg
     viewBox="0 0 15 15"
     fill="none"

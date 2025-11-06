@@ -12,7 +12,7 @@ export const TestimonialAnimation: FC<TestimonialSliderProps> = ({ data }) => (
     aria-label="Traveler testimonials"
     className="overflow-hidden"
   >
-    <div className="flex gap-25 w-max animate-marquee pause-marquee">
+    <div className="animate-marquee pause-marquee flex w-max gap-25">
       {[...data, ...data].map((item, idx) => (
         <TestimonialCard key={`${item.id}-${idx}`} {...item} />
       ))}

@@ -9,26 +9,23 @@ import { LOCATION_OPTIONS } from "@/constants";
 
 import { DropdownProps } from "./types";
 
-export const Dropdown: FC<DropdownProps> = ({
-  selectedCity,
-  setSelectedCity,
-}) => {
+export const Dropdown: FC<DropdownProps> = ({ selectedCity, setSelectedCity }) => {
   const [isLocationOpen, setIsLocationOpen] = useState<boolean>(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useClickOutside(dropdownRef, () => setIsLocationOpen(false));
 
   return (
-    <div className="ml-4 relative" ref={dropdownRef}>
+    <div className="relative ml-4" ref={dropdownRef}>
       <button
         type="button"
-        className="flex gap-5 items-center cursor-pointer"
+        className="flex cursor-pointer items-center gap-5"
         aria-haspopup="listbox"
         aria-expanded={isLocationOpen}
         aria-controls="city-list"
         onClick={() => setIsLocationOpen((prev) => !prev)}
       >
-        <span className="text-2xl/9 md:text-32/12 xl:text-5xl/12 font-lufga-preload font-semibold text-police-blue">
+        <span className="md:text-32/12 font-lufga-preload text-police-blue text-2xl/9 font-semibold xl:text-5xl/12">
           {selectedCity}
         </span>
         <Image
@@ -46,7 +43,7 @@ export const Dropdown: FC<DropdownProps> = ({
       {isLocationOpen && (
         <ul
           id="city-list"
-          className="absolute right-0 mt-2 bg-white mx-auto left-1/2 -translate-x-1/2 w-75 h-68 rounded-4xl shadow-[0_0_10px_0_#0000000F] border border-gray-200 z-10 p-4"
+          className="absolute right-0 left-1/2 z-10 mx-auto mt-2 h-68 w-75 -translate-x-1/2 rounded-4xl border border-gray-200 bg-white p-4 shadow-[0_0_10px_0_#0000000F]"
           role="listbox"
         >
           {LOCATION_OPTIONS.map((loc) => (
@@ -55,7 +52,7 @@ export const Dropdown: FC<DropdownProps> = ({
               role="option"
               aria-selected={selectedCity === loc}
               tabIndex={0}
-              className="p-3 cursor-pointer text-police-blue font-lufga-preload hover:bg-gray-100 text-base/6 flex justify-between items-center"
+              className="text-police-blue font-lufga-preload flex cursor-pointer items-center justify-between p-3 text-base/6 hover:bg-gray-100"
               onClick={() => {
                 setSelectedCity(loc);
                 setIsLocationOpen(false);

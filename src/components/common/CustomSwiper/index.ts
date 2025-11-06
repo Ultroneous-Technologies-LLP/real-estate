@@ -1,1 +1,1 @@
-export * from './CustomSwiper'
+export * from "./CustomSwiper";

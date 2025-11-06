@@ -17,11 +17,7 @@ export const TestimonialSlider: FC<TestimonialSliderProps> = ({ data }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div
-      role="region"
-      aria-roledescription="carousel"
-      aria-label="Traveler testimonials"
-    >
+    <div role="region" aria-roledescription="carousel" aria-label="Traveler testimonials">
       <CustomSwiper
         modules={[Pagination]}
         spaceBetween={10}
@@ -42,7 +38,7 @@ export const TestimonialSlider: FC<TestimonialSliderProps> = ({ data }) => {
         ))}
       </CustomSwiper>
       <div
-        className="flex justify-center gap-1 mt-4 xl:hidden"
+        className="mt-4 flex justify-center gap-1 xl:hidden"
         role="tablist"
         aria-label="Testimonial navigation"
       >
@@ -55,10 +51,8 @@ export const TestimonialSlider: FC<TestimonialSliderProps> = ({ data }) => {
             tabIndex={activeIndex === index ? 0 : -1}
             onClick={() => swiperRef.current?.slideTo(index)}
             className={clsx(
-              "rounded-xl transition-all duration-700 ease-in-out cursor-pointer md:hidden",
-              activeIndex === index
-                ? "bg-police-blue w-3.5 h-2"
-                : "bg-police-blue/40 w-1 h-2"
+              "cursor-pointer rounded-xl transition-all duration-700 ease-in-out md:hidden",
+              activeIndex === index ? "bg-police-blue h-2 w-3.5" : "bg-police-blue/40 h-2 w-1"
             )}
           />
         ))}
