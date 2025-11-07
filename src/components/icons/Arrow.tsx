@@ -1,13 +1,19 @@
-import { SVGProps } from "react";
+import { JSX, SVGProps } from "react";
 
-export const Arrow = ({ width = 15, height = 15, ...svgProps }: SVGProps<SVGSVGElement>) => (
+import { ICON_SIZE_0, ICON_SIZE_15 } from "./constant";
+
+export const Arrow = ({
+  width = ICON_SIZE_15,
+  height = ICON_SIZE_15,
+  ...svgProps
+}: SVGProps<SVGSVGElement>): JSX.Element => (
   <svg
-    viewBox="0 0 15 15"
     fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    width={width}
     height={height}
     role="img"
+    viewBox={`${ICON_SIZE_0} ${ICON_SIZE_0} ${ICON_SIZE_15} ${ICON_SIZE_15}`}
+    width={width}
+    xmlns="http://www.w3.org/2000/svg"
     {...svgProps}
   >
     <path
