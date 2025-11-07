@@ -121,7 +121,7 @@ export default tseslint.config(
           // ✅ Ignore Tailwind and class strings
           filter: {
             regex:
-              "^(rotate-|bg-|text-|fixed|relative|absolute|inset-|top-|bottom-|left-|right-|shadow-|backdrop-|xl:|sm:|md:|lg:|hover:|focus:|\\[|\\]|#)",
+              "^(translate|rotate-|bg-|text-|fixed|relative|absolute|inset-|top-|bottom-|left-|right-|shadow-|backdrop-|xl:|sm:|md:|lg:|hover:|focus:|\\[|\\]|#)",
             match: false,
           },
         },

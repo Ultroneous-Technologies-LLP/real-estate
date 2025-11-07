@@ -4,20 +4,22 @@ import clsx from "clsx";
 import Link from "next/link";
 import { forwardRef } from "react";
 
-import { FACEBOOK_URL, INSTAGRAM_URL, TWITTER_URL } from "@/constants";
 import { Cross, Facebook, Instagram, Twitter } from "@/components/icons";
+import { FACEBOOK_URL, INSTAGRAM_URL, TWITTER_URL } from "@/constants";
 
 import { MobileMenuProps } from "./types";
 
+const TAB_INDEX_VISIBLE = 0;
+const TAB_INDEX_HIDDEN = -1;
+
 export const MobileMenu = forwardRef<HTMLDivElement, MobileMenuProps>(
   ({ mounted, isMenuOpen, setIsMenuOpen, navLinks }, ref) => {
+    const tabIndexValue = mounted && isMenuOpen ? TAB_INDEX_VISIBLE : TAB_INDEX_HIDDEN;
+
     return (
       <div
-        ref={ref}
-        id="mobile-menu"
-        role="menu"
-        aria-label="Mobile Navigation Menu"
         aria-hidden={mounted ? !isMenuOpen : true}
+        aria-label="Mobile Navigation Menu"
         className={clsx(
           "bg-police-blue fixed top-0 right-0 z-50 h-screen w-72 transform rounded-l-4xl px-8 pt-18 pb-12 transition-transform duration-500 ease-in-out",
           {
@@ -25,13 +27,16 @@ export const MobileMenu = forwardRef<HTMLDivElement, MobileMenuProps>(
             "translate-x-full": !isMenuOpen,
           }
         )}
+        id="mobile-menu"
+        ref={ref}
+        role="menu"
       >
         <div className="flex items-center justify-end">
           <button
-            onClick={() => setIsMenuOpen(false)}
             aria-label="Close Menu"
             className="text-2xl font-bold text-white"
-            tabIndex={mounted ? (isMenuOpen ? 0 : -1) : -1}
+            onClick={() => setIsMenuOpen(false)}
+            tabIndex={tabIndexValue}
           >
             <Cross className="cursor-pointer text-[#828F98]" />
           </button>
@@ -40,41 +45,44 @@ export const MobileMenu = forwardRef<HTMLDivElement, MobileMenuProps>(
         <div className="flex h-11/12 flex-col justify-between">
           <ul className="mt-16 flex flex-col gap-6">
             {navLinks.map((value) => (
-              <li key={value.id} role="none" className="space-y-6">
+              <li className="space-y-6" key={value.id} role="none">
                 <Link
-                  href={value.links}
-                  role="menuitem"
                   className="font-lufga-preload text-base/6 font-medium tracking-widest text-white"
+                  href={value.links}
                   onClick={() => setIsMenuOpen(false)}
-                  tabIndex={mounted ? (isMenuOpen ? 0 : -1) : -1}
+                  role="menuitem"
+                  tabIndex={tabIndexValue}
                 >
                   {value.title}
                 </Link>
               </li>
             ))}
           </ul>
-          <div className="flex justify-start gap-10" role="list" aria-label="Social media links">
+
+          <div aria-label="Social media links" className="flex justify-start gap-10" role="list">
             <Link
-              href={FACEBOOK_URL}
               aria-label="Visit our Facebook page"
               className="rounded focus:ring-2 focus:ring-white focus:ring-offset-2 focus:outline-none"
-              tabIndex={mounted ? (isMenuOpen ? 0 : -1) : -1}
+              href={FACEBOOK_URL}
+              tabIndex={tabIndexValue}
             >
               <Facebook aria-hidden="true" className="text-white" />
             </Link>
+
             <Link
-              href={TWITTER_URL}
               aria-label="Visit our Twitter page"
               className="rounded focus:ring-2 focus:ring-white focus:ring-offset-2 focus:outline-none"
-              tabIndex={mounted ? (isMenuOpen ? 0 : -1) : -1}
+              href={TWITTER_URL}
+              tabIndex={tabIndexValue}
             >
               <Twitter aria-hidden="true" className="text-white" />
             </Link>
+
             <Link
-              href={INSTAGRAM_URL}
               aria-label="Visit our Instagram page"
               className="rounded focus:ring-2 focus:ring-white focus:ring-offset-2 focus:outline-none"
-              tabIndex={mounted ? (isMenuOpen ? 0 : -1) : -1}
+              href={INSTAGRAM_URL}
+              tabIndex={tabIndexValue}
             >
               <Instagram aria-hidden="true" className="text-white" />
             </Link>
