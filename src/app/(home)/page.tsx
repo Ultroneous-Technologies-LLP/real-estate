@@ -1,17 +1,18 @@
-import data from "@/content/home-page.json";
+import { FC, PropsWithChildren } from "react";
 
 import { BestDeal, DiscoverExperiences, GoingOnTrip, Hero, Testimonial } from "@/components/home";
+import data from "@/content/home-page.json";
 
-import { HomeDataType } from "./types";
+import { HomePageDataProps } from "./types";
 
-const Home = () => {
+const Home: FC<PropsWithChildren> = () => {
   const {
     heroSection,
     goingOnTripSection,
     bestDealSection,
     discoverExperiencesSection,
     testimonialSection,
-  }: HomeDataType = data;
+  }: HomePageDataProps = data;
 
   return (
     <>
