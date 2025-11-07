@@ -6,29 +6,30 @@ import { FC, useEffect, useRef, useState } from "react";
 import { BREAK_POINT_LG } from "@/constants";
 import { useMounted, useScreenSize } from "@/hooks";
 
-import { TabKey } from "../types";
 import { TABS } from "../constants";
+import { TabKey } from "../types";
+
 import { DesktopTab } from "./DesktopTab";
-import { HorizontalTabProps } from "./types";
 import { MobileSlider } from "./MobileSlider";
+import { HorizontalTabProps } from "./types";
 
 export const HorizontalTab: FC<HorizontalTabProps> = ({ tabData, currentCity }) => {
   const [activeTab, setActiveTab] = useState<TabKey>("Flat");
   const [underlineStyle, setUnderlineStyle] = useState({ left: 0, width: 0 });
   const tabsRef = useRef<HTMLDivElement>(null);
 
-  const mounted = useMounted();
+  const isMounted = useMounted();
   const { width } = useScreenSize();
-  const isMobile = mounted && width < BREAK_POINT_LG;
+  const isMobile = isMounted && width < BREAK_POINT_LG;
 
   useEffect(() => {
-    if (!tabsRef.current) return;
+    if (!tabsRef.current) {
+      return;
+    }
 
     const currentIndex = TABS.indexOf(activeTab);
     const tabButtons = tabsRef.current.children;
-    const activeButton = tabButtons[currentIndex] as HTMLElement;
-
-    if (!activeButton) return;
+    const activeButton = tabButtons[`${currentIndex}`] as HTMLElement;
 
     setUnderlineStyle({
       left: activeButton.offsetLeft,
@@ -36,24 +37,20 @@ export const HorizontalTab: FC<HorizontalTabProps> = ({ tabData, currentCity }) 
     });
   }, [activeTab]);
 
-  const currentItems = tabData[currentCity][activeTab];
+  const currentItems = tabData[`${currentCity}`][`${activeTab}`];
 
   return (
     <div className="relative flex flex-col pt-8 xl:pt-20">
       <div
-        ref={tabsRef}
-        className="relative flex justify-center gap-2 pr-4 md:pr-6 xl:gap-32 xl:pr-0"
-        role="tablist"
         aria-label="Property categories"
+        className="relative flex justify-center gap-2 pr-4 md:pr-6 xl:gap-32 xl:pr-0"
+        ref={tabsRef}
+        role="tablist"
       >
         {TABS.map((tab) => (
           <button
-            key={tab}
-            role="tab"
-            aria-selected={activeTab === tab}
             aria-controls={`tabpanel-${tab}`}
-            id={`tab-${tab}`}
-            onClick={() => setActiveTab(tab)}
+            aria-selected={activeTab === tab}
             className={clsx(
               "font-lufga-preload cursor-pointer p-4 text-xl/7.5 transition-colors duration-700 ease-in-out md:px-10 md:py-4 xl:px-0 xl:pt-0 xl:pb-4 xl:text-3xl/6.5",
               {
@@ -61,6 +58,10 @@ export const HorizontalTab: FC<HorizontalTabProps> = ({ tabData, currentCity }) 
                 "text-cadet-blue-crayola": activeTab !== tab,
               }
             )}
+            id={`tab-${tab}`}
+            key={tab}
+            onClick={() => setActiveTab(tab)}
+            role="tab"
           >
             {tab}
           </button>
@@ -74,7 +75,7 @@ export const HorizontalTab: FC<HorizontalTabProps> = ({ tabData, currentCity }) 
         />
       </div>
 
-      <div id={`tabpanel-${activeTab}`} role="tabpanel" aria-labelledby={`tab-${activeTab}`}>
+      <div aria-labelledby={`tab-${activeTab}`} id={`tabpanel-${activeTab}`} role="tabpanel">
         {isMobile ? <MobileSlider items={currentItems} /> : <DesktopTab items={currentItems} />}
       </div>
     </div>

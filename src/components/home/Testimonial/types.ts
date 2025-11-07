@@ -1,28 +1,28 @@
 export interface SliderData {
+  alt: string;
   id: number;
   name: string;
   position: string;
-  testimonial: string;
   src: string;
-  alt: string;
+  testimonial: string;
 }
 
 export interface Testimonial {
+  alt: string;
   id: number;
   name: string;
   position: string;
-  testimonial: string;
   src: string;
-  alt: string;
+  testimonial: string;
 }
 
 export interface TestimonialCardProps {
+  alt: string;
   id: number;
   name: string;
   position: string;
-  testimonial: string;
   src: string;
-  alt: string;
+  testimonial: string;
 }
 
 export interface TestimonialSliderProps {
@@ -30,7 +30,7 @@ export interface TestimonialSliderProps {
 }
 
 export interface TestimonialProps {
+  sliderData: SliderData[];
   title: string;
   travelersExperience: string;
-  sliderData: SliderData[];
 }

@@ -23,14 +23,14 @@ export const TestimonialCard: FC<TestimonialCardProps> = ({
           <div className="absolute inset-0 animate-pulse rounded-full bg-gray-200 dark:bg-gray-700" />
         )}
         <NextImageWithFallback
-          src={src}
           alt={alt}
-          width={96}
-          height={96}
           className={`h-full w-full rounded-full object-cover transition-opacity duration-500 ${
             isLoading ? "opacity-0" : "opacity-100"
           }`}
+          height={96}
           onLoad={() => setIsLoading(false)}
+          src={src}
+          width={96}
         />
         <div
           className="border-cadet-blue-crayola pointer-events-none absolute inset-0 rounded-full border-2"
