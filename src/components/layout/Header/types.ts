@@ -5,14 +5,14 @@ interface Button {
 }
 
 export interface HeaderProps {
+  button: Button;
   logo: Logo;
   navLinks: NavLinks[];
-  button: Button;
 }
 
 export interface MobileMenuProps {
-  mounted: boolean;
   isMenuOpen: boolean;
-  setIsMenuOpen: (open: boolean) => void;
+  mounted: boolean;
   navLinks: NavLinks[];
+  setIsMenuOpen: (open: boolean) => void;
 }

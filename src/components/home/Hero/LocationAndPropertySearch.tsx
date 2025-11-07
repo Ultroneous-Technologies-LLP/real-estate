@@ -4,7 +4,7 @@ import Image from "next/image";
 import { ChangeEvent, JSX, useRef, useState } from "react";
 
 import { Search } from "@/components/icons";
-import { LOCATION_OPTIONS, BREAK_POINT_Mobile } from "@/constants";
+import { LOCATION_OPTIONS, BREAK_POINT_MOBILE } from "@/constants";
 import { useClickOutside, useMounted, useScreenSize } from "@/hooks";
 
 import { HeroEnum } from "./enum";
@@ -17,7 +17,7 @@ export const LocationAndPropertySearch = (): JSX.Element => {
   const isMounted = useMounted();
 
   const { width } = useScreenSize();
-  const isMobile = isMounted ? width < BREAK_POINT_Mobile : false;
+  const isMobile = isMounted ? width < BREAK_POINT_MOBILE : false;
 
   const dropdownRef = useRef<HTMLDivElement>(null);
   useClickOutside(dropdownRef, () => setIsLocationOpen(false));
