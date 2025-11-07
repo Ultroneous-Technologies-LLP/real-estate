@@ -1,22 +1,22 @@
-import { BestDealProps } from "@/components/home/BestDeal/types";
-import { DiscoverExperiencesProps } from "@/components/home/DiscoverExperiences/types";
-import { GoingOnTripProps } from "@/components/home/GoingOnTrip/types";
-import { HeroProps } from "@/components/home/Hero/types";
-import { TestimonialProps } from "@/components/home/Testimonial/types";
-import { FooterProps } from "@/components/layout/Footer/types";
-import { HeaderProps } from "@/components/layout/Header/types";
+import {
+  BestDealProps,
+  DiscoverExperiencesProps,
+  FooterProps,
+  GoingOnTripProps,
+  HeaderProps,
+  HeroProps,
+  TestimonialProps,
+} from "@/components";
 
-// Layouts Type
-export interface LayoutDataType {
-  header: HeaderProps;
+export interface LayoutProps {
   footer: FooterProps;
+  header: HeaderProps;
 }
 
-// Home Page Type
-export interface HomeDataType {
-  heroSection: HeroProps;
-  goingOnTripSection: GoingOnTripProps;
+export interface HomePageDataProps {
   bestDealSection: BestDealProps;
   discoverExperiencesSection: DiscoverExperiencesProps;
+  goingOnTripSection: GoingOnTripProps;
+  heroSection: HeroProps;
   testimonialSection: TestimonialProps;
 }

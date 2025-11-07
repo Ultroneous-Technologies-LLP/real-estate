@@ -7,11 +7,11 @@ import { BestDealCard } from "./Card";
 import { MobileSliderProps } from "./types";
 
 export const MobileSlider: FC<MobileSliderProps> = ({ items }) => (
-  <div role="region" aria-label="Best deals carousel" className="pt-8 xl:pt-11">
-    <CustomSwiper spaceBetween={16} slidesPerView="auto">
+  <div aria-label="Best deals carousel" className="pt-8 xl:pt-11" role="region">
+    <CustomSwiper slidesPerView="auto" spaceBetween={16}>
       {items.map((item, index) => (
-        <SwiperSlide key={index} className="w-full max-w-70.5 md:max-w-87.5">
-          <BestDealCard image={item.image} title={item.title} link={item.link} />
+        <SwiperSlide className="w-full max-w-70.5 md:max-w-87.5" key={index}>
+          <BestDealCard image={item.image} link={item.link} title={item.title} />
         </SwiperSlide>
       ))}
     </CustomSwiper>
