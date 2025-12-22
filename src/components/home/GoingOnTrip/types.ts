@@ -1,18 +1,18 @@
 import { Image } from "@/types";
 
 interface Guides {
+  alt: string;
+  description: string;
+  height: number;
   id: number;
   src: string;
-  alt: string;
   title: string;
-  description: string;
   width: number;
-  height: number;
 }
 
 export interface GoingOnTripProps {
+  borderImg: Image;
+  guides: Guides[];
   trip: string;
   yourStay: string;
-  guides: Guides[];
-  borderImg: Image;
 }

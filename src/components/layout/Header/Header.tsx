@@ -4,21 +4,25 @@ import clsx from "clsx";
 import Link from "next/link";
 import { FC, useEffect, useRef, useState } from "react";
 
-import { useMounted, useScreenSize } from "@/hooks";
-import { BREAK_POINT_MD } from "@/constants";
 import { Container, NextImageWithFallback } from "@/components/common";
+import { BREAK_POINT_MD } from "@/constants";
+import { useMounted, useScreenSize } from "@/hooks";
 
-import { HeaderProps } from "./types";
 import { MobileMenu } from "./MobileMenu";
+import { HeaderProps } from "./types";
+
+const SCROLL_THRESHOLD = 20;
+const SECTION_OFFSET = 100;
+const UNDERLINE_HOME_PRIORITY = 1;
 
 export const Header: FC<HeaderProps> = ({ button, logo, navLinks }) => {
-  const [scrolled, setScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string | null>(null);
   const mobileMenuRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
+    const handleClickOutside = (event: MouseEvent): void => {
       if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
         setIsMenuOpen(false);
       }
@@ -30,18 +34,18 @@ export const Header: FC<HeaderProps> = ({ button, logo, navLinks }) => {
       document.removeEventListener("mousedown", handleClickOutside);
     }
 
-    return () => {
+    return (): void => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [isMenuOpen]);
 
-  const mounted = useMounted();
+  const isMounted = useMounted();
   const { width } = useScreenSize();
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = (): void => setIsScrolled(window.scrollY > SCROLL_THRESHOLD);
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    return (): void => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -49,18 +53,22 @@ export const Header: FC<HeaderProps> = ({ button, logo, navLinks }) => {
   }, [isMenuOpen]);
 
   useEffect(() => {
-    if (width < BREAK_POINT_MD || !isMenuOpen) return;
+    if (width < BREAK_POINT_MD || !isMenuOpen) {
+      return;
+    }
     setIsMenuOpen(false);
   }, [width, isMenuOpen]);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + 100; // header offset
+    const handleScroll = (): void => {
+      const scrollPosition = window.scrollY + SECTION_OFFSET;
 
       let currentSection: string | null = null;
 
       navLinks.forEach((link) => {
-        const selector = link.links.startsWith("/") ? link.links.slice(1) : link.links;
+        const selector = link.links.startsWith("/")
+          ? link.links.slice(UNDERLINE_HOME_PRIORITY)
+          : link.links;
         const section = document.querySelector(selector);
         if (section) {
           const { offsetTop, offsetHeight } = section as HTMLElement;
@@ -74,32 +82,32 @@ export const Header: FC<HeaderProps> = ({ button, logo, navLinks }) => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // run on mount
-    return () => window.removeEventListener("scroll", handleScroll);
+    handleScroll();
+    return (): void => window.removeEventListener("scroll", handleScroll);
   }, [navLinks]);
 
   return (
     <nav
+      aria-label="Main Navigation"
       className={clsx(
         "fixed top-0 left-1/2 z-50 mx-auto w-full -translate-x-1/2 transition-colors duration-700 ease-in-out",
         {
-          "bg-transparent": !scrolled,
-          "bg-white/50 shadow-md backdrop-blur-[22px]": scrolled,
+          "bg-transparent": !isScrolled,
+          "bg-white/50 shadow-md backdrop-blur-[22px]": isScrolled,
         }
       )}
       role="navigation"
-      aria-label="Main Navigation"
     >
       <Container as="header" className="px-4 py-2 xl:px-27.5 xl:py-8">
         <div className="flex items-center justify-between">
           <Link href={logo.link}>
-            <div className="flex items-center gap-4" aria-label={`Go to ${logo.title} homepage`}>
+            <div aria-label={`Go to ${logo.title} homepage`} className="flex items-center gap-4">
               <NextImageWithFallback
-                src={logo.src}
-                width={38}
-                height={38}
                 alt={logo.alt}
+                height={38}
+                src={logo.src}
                 title={logo.alt}
+                width={38}
               />
               <p className="text-police-blue font-lufga-preload hidden text-xl/5 font-semibold md:block">
                 <span>{logo.title}</span>
@@ -116,10 +124,10 @@ export const Header: FC<HeaderProps> = ({ button, logo, navLinks }) => {
                     : isActive;
 
                 return (
-                  <li key={value.id} role="menuitem" className="relative">
+                  <li className="relative" key={value.id} role="menuitem">
                     <Link
-                      href={value.links}
                       className="font-lufga-preload text-police-blue text-base/9 font-medium transition-colors duration-300"
+                      href={value.links}
                     >
                       <span>{value.title}</span>
                     </Link>
@@ -140,11 +148,11 @@ export const Header: FC<HeaderProps> = ({ button, logo, navLinks }) => {
               <span>{button.title}</span>
             </button>
             <button
+              aria-controls="mobile-menu"
+              aria-expanded={isMounted ? isMenuOpen : undefined}
+              aria-label="Open Menu"
               className="block w-full max-w-6.5 cursor-pointer space-y-1 md:hidden"
               onClick={() => setIsMenuOpen(true)}
-              aria-label="Open Menu"
-              aria-controls="mobile-menu"
-              aria-expanded={mounted ? isMenuOpen : undefined}
             >
               <span className="bg-police-blue mr-0 ml-auto block h-[2.7px] w-[14.4px] rounded-full" />
               <span className="bg-police-blue mx-auto block h-[2.7px] w-[14.4px] rounded-full" />
@@ -157,8 +165,8 @@ export const Header: FC<HeaderProps> = ({ button, logo, navLinks }) => {
             {navLinks.map((value) => (
               <li key={value.id}>
                 <Link
-                  href={value.links}
                   className="font-lufga-preload text-police-blue text-base/9 font-medium"
+                  href={value.links}
                 >
                   <span>{value.title}</span>
                 </Link>
@@ -168,11 +176,11 @@ export const Header: FC<HeaderProps> = ({ button, logo, navLinks }) => {
         </div>
       </Container>
       <MobileMenu
-        ref={mobileMenuRef}
-        mounted={mounted}
         isMenuOpen={isMenuOpen}
-        setIsMenuOpen={setIsMenuOpen}
+        mounted={isMounted}
         navLinks={navLinks}
+        ref={mobileMenuRef}
+        setIsMenuOpen={setIsMenuOpen}
       />
     </nav>
   );

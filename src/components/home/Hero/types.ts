@@ -1,13 +1,13 @@
 import { Image } from "@/types";
 
 interface Description {
-  title: string;
   id: number;
+  title: string;
 }
 
 export interface HeroProps {
-  image: Image;
-  youFocus: string;
-  manageYourStay: string;
   description: Description[];
+  image: Image;
+  manageYourStay: string;
+  youFocus: string;
 }

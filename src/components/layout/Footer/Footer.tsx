@@ -1,8 +1,7 @@
-import { FC } from "react";
 import Link from "next/link";
+import { FC } from "react";
 
-import { Facebook, Instagram, Twitter } from "@/components/icons";
-import { Container, NextImageWithFallback } from "@/components/common";
+import { Container, NextImageWithFallback, Facebook, Instagram, Twitter } from "@/components";
 import { FACEBOOK_URL, INSTAGRAM_URL, TWITTER_URL } from "@/constants";
 
 import { FooterProps } from "./types";
@@ -16,14 +15,14 @@ export const Footer: FC<FooterProps> = ({ anyDoubts, contactUs, logo, navLinks }
   >
     <div className="mx-auto w-full max-w-171">
       <div>
-        <Link href={logo.link} aria-label={`${logo.title} homepage`}>
+        <Link aria-label={`${logo.title} homepage`} href={logo.link}>
           <NextImageWithFallback
-            src={logo.src}
-            width={54}
-            height={54}
             alt={logo.alt}
-            title={logo.alt}
             className="mx-auto"
+            height={54}
+            src={logo.src}
+            title={logo.alt}
+            width={54}
           />
         </Link>
         <p className="font-lufga-preload pt-3 text-center text-xl font-semibold text-white xl:pt-3.5 xl:text-2xl/6">
@@ -41,9 +40,9 @@ export const Footer: FC<FooterProps> = ({ anyDoubts, contactUs, logo, navLinks }
           {navLinks.map((value) => (
             <li key={value.id}>
               <Link
-                href={value.links}
-                className="font-lufga-preload rounded text-base leading-6 font-medium text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:outline-none xl:leading-9"
                 aria-label={`Go to ${value.title}`}
+                className="font-lufga-preload rounded text-base leading-6 font-medium text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:outline-none xl:leading-9"
+                href={value.links}
               >
                 <span>{value.title}</span>
               </Link>
@@ -52,28 +51,28 @@ export const Footer: FC<FooterProps> = ({ anyDoubts, contactUs, logo, navLinks }
         </ul>
       </nav>
       <div
+        aria-label="Social media links"
         className="flex items-center justify-center gap-4 pt-8 xl:pt-13.5"
         role="list"
-        aria-label="Social media links"
       >
         <Link
-          href={FACEBOOK_URL}
           aria-label="Visit our Facebook page"
           className="rounded p-2 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:outline-none"
+          href={FACEBOOK_URL}
         >
           <Facebook aria-hidden="true" className="text-white" />
         </Link>
         <Link
-          href={TWITTER_URL}
           aria-label="Visit our Twitter page"
           className="rounded p-2 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:outline-none"
+          href={TWITTER_URL}
         >
           <Twitter aria-hidden="true" className="text-white" />
         </Link>
         <Link
-          href={INSTAGRAM_URL}
           aria-label="Visit our Instagram page"
           className="rounded p-2 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:outline-none"
+          href={INSTAGRAM_URL}
         >
           <Instagram aria-hidden="true" className="text-white" />
         </Link>

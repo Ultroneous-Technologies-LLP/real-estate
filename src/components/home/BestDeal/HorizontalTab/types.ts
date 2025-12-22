@@ -2,8 +2,8 @@ import { TabData } from "../types";
 
 export interface BestDealCardProps {
   image: string;
-  title: string;
   link: string;
+  title: string;
 }
 
 export interface DesktopGridProps {
@@ -11,8 +11,8 @@ export interface DesktopGridProps {
 }
 
 export interface HorizontalTabProps {
-  tabData: Record<string, TabData>;
   currentCity: string;
+  tabData: Record<string, TabData>;
 }
 
 export interface MobileSliderProps {

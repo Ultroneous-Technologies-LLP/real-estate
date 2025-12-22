@@ -1,5 +1,3 @@
-// Common types
-
 export interface NavLinks {
   id: number;
   links: string;
@@ -7,13 +5,13 @@ export interface NavLinks {
 }
 
 export interface Logo {
-  title: string;
-  src: string;
   alt: string;
   link: string;
+  src: string;
+  title: string;
 }
 
 export interface Image {
-  src: string;
   alt: string;
+  src: string;
 }
