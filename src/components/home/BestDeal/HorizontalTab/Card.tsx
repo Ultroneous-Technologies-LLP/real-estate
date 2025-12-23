@@ -14,22 +14,24 @@ export const BestDealCard: FC<BestDealCardProps> = ({ image, title, link }) => {
 
   return (
     <div className="group w-full" role="listitem">
-      <div className="relative overflow-hidden rounded-md">
+      <div className="relative w-full overflow-hidden rounded-md" role="listitem">
         {/* Skeleton loader */}
         {isLoading && (
           <div className="absolute inset-0 animate-pulse rounded-md bg-gray-200 dark:bg-gray-700" />
         )}
-        <NextImageWithFallback
-          src={image}
-          width={349}
-          height={363}
-          alt={title}
-          className={`h-full w-full rounded-md object-cover transition-transform duration-300 group-hover:scale-105 ${
-            isLoading ? "opacity-0" : "opacity-100"
-          }`}
-          onLoad={() => setIsLoading(false)}
-        />
-        <div className="absolute inset-0 rounded-lg bg-black/0 transition-colors duration-500 group-hover:bg-black/50" />
+        <div className="cursor-pointer overflow-hidden rounded-md">
+          <NextImageWithFallback
+            alt={title}
+            className={`h-full w-full rounded-md object-cover transition-transform duration-300 ${
+              isLoading ? "opacity-0" : "opacity-100"
+            }`}
+            height={363}
+            onLoad={() => setIsLoading(false)}
+            src={image}
+            width={349}
+          />
+          <div className="absolute inset-0 rounded-lg bg-black/0 transition-colors duration-500 hover:bg-black/50" />
+        </div>
       </div>
       <h3 className="font-lufga-preload text-police-blue pt-4 text-base/6 xl:text-xl/6.5">
         {title}
@@ -38,7 +40,7 @@ export const BestDealCard: FC<BestDealCardProps> = ({ image, title, link }) => {
         <Link href={link} aria-label={`Know more about ${title}`} className="flex w-full">
           <div
             className="text-police-blue font-lufga-preload inline-block w-full max-w-50 rounded-lg border border-[#C4C4C4] px-4 
-          py-2 text-base/8 font-semibold tracking-widest uppercase !no-underline transition-all duration-300 ease-in-out group-hover:rounded-full hover:underline"
+          py-2 text-base/8 font-semibold tracking-widest uppercase transition-all duration-300 ease-in-out group-hover:rounded-full group-hover:underline"
           >
             {BestDealEnum.KNOW_MORE}
           </div>
