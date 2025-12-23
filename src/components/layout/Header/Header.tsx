@@ -2,7 +2,7 @@
 
 import clsx from "clsx";
 import Link from "next/link";
-import { FC, useEffect, useRef, useState } from "react";
+import { FC, useEffect, useState } from "react";
 
 import { useMounted, useScreenSize } from "@/hooks";
 import { BREAK_POINT_MD } from "@/constants";
@@ -15,25 +15,6 @@ export const Header: FC<HeaderProps> = ({ button, logo, navLinks }) => {
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string | null>(null);
-  const mobileMenuRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
-        setIsMenuOpen(false);
-      }
-    };
-
-    if (isMenuOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    } else {
-      document.removeEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [isMenuOpen]);
 
   const mounted = useMounted();
   const { width } = useScreenSize();
@@ -90,7 +71,7 @@ export const Header: FC<HeaderProps> = ({ button, logo, navLinks }) => {
       role="navigation"
       aria-label="Main Navigation"
     >
-      <Container as="header" className="px-4 py-2 xl:px-27.5 xl:py-8">
+      <Container as="header" className="px-4 py-5 xl:px-27.5 xl:py-8">
         <div className="flex items-center justify-between">
           <Link href={logo.link}>
             <div className="flex items-center gap-4" aria-label={`Go to ${logo.title} homepage`}>
@@ -168,7 +149,6 @@ export const Header: FC<HeaderProps> = ({ button, logo, navLinks }) => {
         </div>
       </Container>
       <MobileMenu
-        ref={mobileMenuRef}
         mounted={mounted}
         isMenuOpen={isMenuOpen}
         setIsMenuOpen={setIsMenuOpen}
